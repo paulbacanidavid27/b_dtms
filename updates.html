@@ -1,0 +1,539 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>List of Updates</title>
+    <script language="javascript">
+        function show(id1, id2, id3) {
+            document.getElementById(id1).style.display = '';
+            document.getElementById(id2).style.display = 'none'
+            document.getElementById(id3).style.display = ''
+        }
+        function hide(id1, id2, id3) {
+            document.getElementById(id1).style.display = 'none';
+            document.getElementById(id2).style.display = ''
+            document.getElementById(id3).style.display = 'none'
+        }
+    </script>
+</head>
+
+<body style="margin:0px">
+<div style=" width:100%;height:100%">
+<div style="background-color:#FFFFFF; width:100%;">
+<img  alt="" src="images/logo/logo.png" />
+</div>
+
+<div style="width:100%;font-family:Calibri;">
+<h3><img id="imgShowRecent" src="images/plus.jpg" alt="" style="margin-left:10px;cursor:pointer" onclick="show('recentchanges','imgShowRecent','imgHideRecent')"/>
+    <img id="imgHideRecent" src="images/minus.jpg" alt="" style="margin-left:10px;display:none;cursor:pointer" onclick="hide('recentchanges','imgShowRecent','imgHideRecent')"/> RECENT CHANGES</h3>
+    <div id="recentchanges" style="margin-left:15px;display:none">
+    <h3><img id="imgShow2016" src="images/plus.jpg" alt="" style="margin-left:10px;cursor:pointer" onclick="show('tbl2016','imgShow2016','imgHide2016')"/>
+    <img id="imgHide2016" src="images/minus.jpg" alt="" style="margin-left:10px;display:none;cursor:pointer" onclick="hide('tbl2016','imgShow2016','imgHide2016')"/> 2016</h3>
+    <table id="tbl2016" style="margin-left:20px;background-color:#D9EEF9;border-collapse:collapse;width:90%;display:none" cellpadding="5" border="1">
+    <tr valign="top" style="background-color:Aqua;color:#222222;font-weight:bold">
+    <td width="10%">Version</td>
+    <td width="10%">Release Date</td>
+    <td width="55%">Updates</td>
+    <td width="10%">Requested Date</td>
+    <td width="15%">Requested By</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.712</td>
+    <td>June 16, 2016</td>
+    <td>
+        1. Added Reference No Range (From / To) on the header part of Document Status Report.<br />
+2. Updated the Download and Print icon of PDF Viewer.<br />
+3. Added Download and Print functionality in the Main Document Viewer Screen.<br />
+4. Added Download functionality in the Version Document Viewer Screen.<br />
+5. Added notification that Microsoft documents (e.g. xls,doc,ppt) cannot be viewed directly in the system. The user needs to download it in order to view the document.<br />
+6. Added confirmation message before creating subtask.<br />
+7. Added Cancel Check-Out functionality.<br />
+
+
+    </td>
+    <td>May 9, 2016</td>
+    <td>1-3. Requested by PS</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.712</td>
+    <td>June 10, 2016</td>
+    <td>
+        1. Modified Group Status to add logo and Report Company.<br />
+2. Modified Acknowledgement Receipt to make the Company Name and Logo based on the group of logon user.<br />
+3. Modified Reply Document to make the Company Name and Logo based on the group of logon user.
+    </td>
+    <td>May 9, 2016</td>
+    <td>1-3. Requested by PS</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.710</td>
+    <td>May 24, 2016</td>
+    <td>
+        1. Added Group Routing History Report.<br />
+        2. Added Awaiting Submission Status.<br />
+        3. Added Reference Number in Search Result.<br />
+    </td>
+    <td>May 9, 2016</td>
+    <td>1-3. Requested by OPCCB</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.710</td>
+    <td>May 23, 2016</td>
+    <td>1. Updated sorting of Subtask.<br />
+        2. Made the list of Completed Status dynamic.<br />
+        
+                    </td>
+                    <td>May 23, 2016</td>
+    <td>Added by George</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.710</td>
+    <td>May 20, 2016</td>
+    <td>Added NCA No, Saro No, Title, Box No search mechanism.</td>
+    <td>May 20, 2016</td>
+    <td>Added by George</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.710</td>
+    <td>May 19, 2016</td>
+    <td>1. Added Print and Download functionality       
+                    </td>
+                    <td>May 19, 2016</td>
+    <td>Added by George</td>
+    </tr>
+    
+    <tr valign="top">
+    <td>1.0.708</td>
+    <td>May 18, 2016</td>
+    <td>1. Added Deleted Documents Report.<br />
+        2. Fixed Sorting Problem in Document Status report.<br />
+        3. Added Remarks criteria in Group Status report.<br />
+        4. Added Documents Archived Per User report.<br />
+        5. Added Documents Archived report.<br />
+        6. Added new note ("In following up...") in Acknowledgement Receipt.        
+    </td>
+    <td>May 16, 2016</td>
+    <td>1. Requested by Jewel <br />2. Requested by Region VIII<br />3. Requested By Sheen<br />4-5. Requested By Jewel<br />6. Requested By Ma'am Marissa</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.706</td>
+    <td>May 10, 2016</td>
+    <td>1. Made the Total Copies and Total Pages of Subtask document available for edit.<br />
+                    2. Updated the criteria and layout of Document History Report.
+                    </td>
+                    <td>July 6, 2015</td>
+    <td>Requested by Jewel</td>
+    </tr>    
+    </table>
+    <h3><img id="imgShow2015" src="images/plus.jpg" alt="" style="margin-left:10px;cursor:pointer" onclick="show('tbl2015','imgShow2015','imgHide2015')"/>
+    <img id="imgHide2015" src="images/minus.jpg" alt="" style="margin-left:10px;display:none;cursor:pointer" onclick="hide('tbl2015','imgShow2015','imgHide2015')"/> 2015</h3>
+    <table id="tbl2015" style="margin-left:20px;background-color:#D9EEF9;border-collapse:collapse;width:90%;display:none" cellpadding="5" border="1">
+    <tr valign="top" style="background-color:Aqua;color:#222222;font-weight:bold">
+    <td width="10%">Version</td>
+    <td width="10%">Release Date</td>
+    <td width="55%">Updates</td>
+    <td width="10%">Requested Date</td>
+    <td width="15%">Requested By</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.541</td>
+    <td>August 5, 2015</td>
+    <td>
+        1. Added Less than a Minute computation in Tracking tab of Documents.<br />
+        2. Added Title Tooltip in Document Link in Document screen.<br />
+        3. Added Reference Number in Search Result.<br />
+                    </td>
+                    <td>August 5, 2015</td>
+    <td>1. Requested by Jewel<br />2-3. Added by George</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.531</td>
+    <td>August 4, 2015</td>
+    <td>1. Removed all Administrative Services wordings in all the Reports.<br />
+        2. Added Office icon in List of Offices screen.<br />
+        
+                    </td>
+                    <td>August 4, 2015</td>
+    <td>1. Requested by Jewel<br />2. Added by George</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.524</td>
+    <td>July 14, 2015</td>
+    <td>1. Fixed the email notification without title.<br />
+        2. Included Reference no in the email notification for the approver/cc.<br />
+        3. Change the default sort order of Pending task to Date Sent descending.<br />
+        4. Added Requested date in the list of updates.      
+                    </td>
+                    <td>July 14, 2015</td>
+    <td>Requested by Jewel</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.492</td>
+    <td>July 10, 2015</td>
+    <td>1. Allowed modification of Total Copies and Total Pages of document when a user is admin or the logon user group = 'CRV'.<br />
+        2. Included User criteria in the dashboard list.<br />
+        3. Created page for recent changes.<br />
+        4. Order Groups alphabetically in Upload Documents, User Maintenance and Group Status report.<br />
+        5. Created Separate screen for Office table (currently part of Settings screen).<br />
+        6. Added Point Person field in Office table (need to add column pointperson,showasdefault,deleted in office table). <br />
+        7. Used the Point Person as the default approver in Upload Document screen if enabled.<br />
+        8. Fixed problem on Acknowledgedment Receipt CC list not updating when the CC user was cancelled in Routing tab.<br />
+        9. Fixed the problem on printing Acknowledgedment Receipt if there's no total pages specified.<br />
+        10. Allow viewing of the parent document in Subtask document.<br />
+        11. Deleted documents should not be shown in the report.        
+                    </td>
+                    <td>July 10, 2015</td>
+    <td>Requested by Jewel</td>
+    </tr>
+    
+    <tr valign="top">
+    <td>1.0.492</td>
+    <td>July 10, 2015</td>
+    <td>1. Allowed modification of Total Copies and Total Pages of document when a user is admin or the logon user group = 'CRV'.<br />
+        2. Included User criteria in the dashboard list.<br />
+        3. Created page for recent changes.<br />
+        4. Order Groups alphabetically in Upload Documents, User Maintenance and Group Status report.<br />
+        5. Created Separate screen for Office table (currently part of Settings screen).<br />
+        6. Added Point Person field in Office table (need to add column pointperson,showasdefault,deleted in office table). <br />
+        7. Used the Point Person as the default approver in Upload Document screen if enabled.<br />
+        8. Fixed problem on Acknowledgedment Receipt CC list not updating when the CC user was cancelled in Routing tab.<br />
+        9. Fixed the problem on printing Acknowledgedment Receipt if there's no total pages specified.<br />
+        10. Allow viewing of the parent document in Subtask document.<br />
+        11. Deleted documents should not be shown in the report.        
+                    </td>
+                    <td>July 10, 2015</td>
+    <td>Requested by Jewel</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.421</td>
+    <td>July 6, 2015</td>
+    <td>1. Made the Total Copies and Total Pages of Subtask document available for edit.<br />
+                    2. Updated the criteria and layout of Document History Report.
+                    </td>
+                    <td>July 6, 2015</td>
+    <td>Requested by Jewel</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.399</td>
+    <td>June 21, 2015</td>
+    <td>1. Added User Search in Document List Per User.
+                    2. Get the Acknowledged Date if there's no approved date for No Action Required
+                    </td>
+                    <td>June 21, 2015</td>
+    <td>Requested by Jewel</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.395</td>
+    <td>June 20, 2015</td>
+    <td>Updated Document User List Report with the request from Region I.
+                    </td>
+                    <td>June 20, 2015</td>
+    <td>Requested by Jewel</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.388</td>
+    <td>June 16, 2015</td>
+    <td>1. Added Document List Per User Report.<br />
+                    2. Added Document Received Report.<br />
+                    </td>
+                    <td>June 16, 2015</td>
+    <td>Requested by Jewel</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.385</td>
+    <td>June 15, 2015</td>
+    <td>1. Implemented Delete Attachment.<br />
+                    2. Modified the system to check the alternate folder where attachments are stored.<br />
+                    </td>
+                    <td>June 15, 2015</td>
+    <td>Requested by Jewel</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.377</td>
+    <td>June 15, 2015</td>
+    <td>1. View all activities of User (For Admin user only).<br />
+                    2. Modified the system to check the alternate folder where attachments are stored.<br />
+                    </td>
+                    <td>June 15, 2015</td>
+    <td>Requested by Jewel</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.366</td>
+    <td>June 15, 2015</td>
+    <td>1. Moved some of the attachments in another folder to free-up diskspace.<br />
+                    2. Modified the system to check the alternate folder where attachments are stored.<br />
+                    </td>
+                    <td>June 15, 2015</td>
+    <td>Requested by Jewel</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.364</td>
+    <td>June 15, 2015</td>
+    <td>1. Added Classification in the upload screen.<br />
+                    2. Added Classification as one of the criteria in Advanced Search screen.<br />
+                    3. Added Classification in View screen.<br />
+                    4. Added Classification as one of the Filter criteria in Document screen.<br />
+                    5. Changed the layout of Search result.<br />
+                    6. Rename the label from Status to Last Action in the Search result.</td>
+                    <td>June 15, 2015</td>
+    <td>Requested by Jewel</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.361</td>
+    <td>June 15, 2015</td>
+    <td>Added Sorting functionality in Pending Task.</td>
+    <td>June 15, 2015</td>
+    <td>Requested by Jewel</td>
+    </tr>
+    
+    
+    
+    <tr valign="top">
+    <td>1.0.330</td>
+    <td>June 8, 2015</td>
+    <td>Fixed problem on reading PDF with password.</td>
+    <td>June 8, 2015</td>
+    <td>Reported by Jewel</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.327</td>
+    <td>June 8, 2015</td>
+    <td>Fixed problem on Document history where history log are recorded twice.</td>
+    <td>June 8, 2015</td>
+    <td>Reported by Jewel</td>
+    </tr>    
+    <tr valign="top">
+    <td>1.0.336</td>
+    <td>June 8, 2015</td>
+    <td>Fixed problem on viewing document where the viewer is not loading completely.</td>
+    <td>June 8, 2015</td>
+    <td>Reported by Sheen</td>
+    </tr>    
+    <tr valign="top">
+    <td>1.0.323</td>
+    <td>June 8, 2015</td>
+    <td>Enabled page for error handling.</td>
+    <td></td>
+    <td></td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.320</td>
+    <td>March 10, 2015</td>
+    <td>1. Added functionality to show notification in the screen that drive space is not sufficient for uploading documents.<br />
+                    2. Included "No Document Action Required" status from the list of action for approvers with role = "user".<br />
+                    3. Fixed problem on uploading document where the user cannot route different document on the same approver.<br />
+                    4. Modified the width of the title in the Document Receipt to accommodate long document title.</td><td></td><td></td>
+    </tr> 
+    <tr valign="top">
+    <td>1.0.310</td>
+    <td>March 2, 2015</td>
+    <td>1. Created Address table maintenance screen. This is to set different address of regional offices. Address will be displayed in the Acknowledgement receipt and Reply document.<br />
+                    2. Fixed problem on Reply Document Page no not being printed and saved.<br />
+                    </td><td></td><td></td>
+    </tr> 
+    <tr valign="top">
+    <td>1.0.300</td>
+    <td>Feb 9, 2015</td>
+    <td>1. Added Pending Days in Group Status Report.<br />
+                    2. Modified User Maintenance screen to add User Role = "Report Generator". This role is for user who is assigned for generating reports.
+                   
+                    </td><td></td><td></td>
+    </tr> 
+    <tr valign="top">
+    <td>1.0.290</td>
+    <td>January 26, 2015</td>
+    <td>1. Modified all reports so that not only super user can access the report but also the Report Generator.<br />
+                    2. Modify the document approval screen to show the "No Document Action Required" status for all users.
+                    </td><td></td><td></td>
+    </tr> 
+    </table>
+    <h3><img id="imgShow2014" src="images/plus.jpg" alt="" style="margin-left:10px;cursor:pointer" onclick="show('tbl2014','imgShow2014','imgHide2014')"/>
+    <img id="imgHide2014" src="images/minus.jpg" alt="" style="margin-left:10px;display:none;cursor:pointer" onclick="hide('tbl2014','imgShow2014','imgHide2014')"/> 2014</h3>
+    <table id="tbl2014" style="margin-left:20px;background-color:#D9EEF9;border-collapse:collapse;width:90%;display:none" cellpadding="5" border="1">
+    <tr valign="top" style="background-color:Aqua;color:#222222;font-weight:bold">
+    <td width="10%">Version</td>
+    <td width="15%">Release Date</td>
+    <td width="60%">Updates</td>
+    <td width="15%">Requested By</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.197</td>
+    <td>November 2, 2014</td>
+    <td>1. Implemented Outgoing Status. In routing document, the user should be able to specify the action that will be made to the documents.<br />
+                    2. Modified the Document Action screen to identify the status that is for outgoing and incoming.
+                    3. Modified the Report criteria and Advanced Search screen to include this in one of the criteria for searching.</td>
+    <td>Reported by Jewel</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.150</td>
+    <td>September 29, 2014</td>
+    <td>1. Made the Sender field in the View screen editable.<br />
+                    2. Added new functionality in Import Screen (viewing of files under the selected folder for import)</td>
+    <td>Reported by Jewel</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.149</td>
+    <td>August 26, 2014</td>
+    <td>1. Add Personnel In-Charge criteria in Search screen.<br />
+                    2. Add Personnel In-Charge column in the search result.</td>
+    <td></td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.148</td>
+    <td>August 15, 2014</td>
+    <td>Allowed Viewing of Attachment in Archived Documents only for document type='Letters'.</td>
+    <td>Reported by Jewel</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.147</td>
+    <td>June 15, 2014</td>
+    <td>1. Added Last Action Criteria in Document Status Report.<br />
+                    2. Added Last Action Criteria in Group Status Report.<br />
+                    3. Added Last Action criteria in Search Screen</td>
+    <td>Requested by Jewel</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.141</td>
+    <td>June 12, 2014</td>
+    <td>1. Fixed problem on Document Reply screen.<br /> 
+                    2. Allowed Admin user to check-in documents.<br />
+                    3. Fixed Problem on Creating Duplicate Routing in Pending Tasks</td>
+    <td>Requested by Jewel</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.133</td>
+    <td>May 18, 2014</td>
+    <td>1. Implemented Email functionality in View screen to Archive Point Person 
+                    </td>
+    <td>Requested by Jewel</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.108</td>
+    <td>March 16, 2014</td>
+    <td>1. Added Notify Point Person when document is archived.<br />
+                    2. Added Document Uploaded Hourly Report.<br />
+                    3. Addded Type of Request Maintenance Screen.<br />
+                    4. Included Type of Request and Sender in Search screen criteria.<br />
+                    5. Modified Upload Document Screen to Include Request Type.<br />
+                    6. Modified the Document Status report to include Type of Request.<br />
+                    7. Modified the GRoup Status report to include Type of Request.<br />
+                    8. Implement Cancel Functionality in CC Routing.<br />
+                    9. Limit the size of task based on rows to display per page.<br />
+                    10 Fix problem on viewing attachment.
+                    </td>
+    <td>Requested by Jewel</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.102</td>
+    <td>February 28, 2014</td>
+    <td>1. Document Status Report New Layout.<br />
+                    2. Cancel Routing now able to change Routed To in Print Receipt.<br />
+                    3. Sender now available when re-printing acknowledgement receipt.<br />
+                    4. Upload limit set to 32MB.
+                    </td>
+    <td>Requested by Jewel</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.091</td>
+    <td>February 8, 2015</td>
+    <td>1. Can create folders in Document Inbox. You can use this to organize the documents in your inbox.<br />
+2. Removed the uploaded by and office column in document screen.<br />
+3. Added Location column in document screen. This will show the last person assigned to the document.<br />
+4. Added Agency column in document screen.<br />
+5. Replaced Due Date with Date Sent on Task list. This will show when the document was routed.<br />
+6. Show the Subtask tab for subtask document to view all the other sub task of the document.<br />
+7. Added the parent link to the subtask list.<br />
+8. In the Document Status Report, set the status to "Closed" if the remarks is "NO ACTION REQUIRED".<br />
+9. Can now copy the other user group set-up when creating a new user group.
+                    </td>
+    <td>Requested by Jewel</td>
+    </tr>
+    
+    </table>
+    </div>
+    <h3><img id="img1" src="images/plus.jpg" alt="" style="margin-left:10px;cursor:pointer" onclick="show('testsite','img1','img2')"/>
+    <img id="img2" src="images/minus.jpg" alt="" style="margin-left:10px;display:none;cursor:pointer" onclick="hide('testsite','img1','img2')"/> UPDATES IMPLEMENTED IN TEST SITE</h3>
+    <table id="testsite" style="margin-left:10px;display:none;background-color:#C6FFE2;border-collapse:collapse;width:90%" cellpadding="5" border="1">
+    <tr valign="top" style="background-color:yellow;color:#222222;font-weight:bold">
+    <td width="10%">Version</td>
+    <td width="15%">Date</td>
+    <td width="60%">Updates</td>
+    <td>Requested Date</td>
+    <td width="15%">Requested By</td>
+    </tr>
+    <tr valign="top">
+    <td>1.0.431</td>
+    <td>July 10, 2015</td>
+    <td>1. Fixed displaying of records in the Dashboard Charts.<br />     
+    </td>
+    <td></td>
+    <td>Requested by Jewel</td>
+    </tr>
+    <tr valign="top">
+    <td>n/a</td>
+    <td>July 6, 2015</td>
+    <td>1. Added Additional Remarks in Upload Document screen.<br />
+                    2. Included Additional Remarks in Acknowledgement.
+                    </td>
+                    <td></td>
+    <td>Requested by Sheen</td>
+    </tr>
+    <tr valign="top">
+    <td>n/a</td>
+    <td>July 6, 2015</td>
+    <td>1. Updated the Share feature in View Document screen to be used for sending email for a particular user repeatedly. The user role should be 'Archiving' so enabled this feature.<br /><br />
+                    Changes related to this feature.<br />
+                    a. Added user role "Archiving" in User Maintenance<br />
+                    b. Modified the Share screen to show a Save button so the user can save any changes to Recipient list, Subject or Body of the email.<br />
+                    c. Added history.<br />
+                    Note: need to create these tables (legalmailcontent,recepientlist)
+                    </td>
+                    <td></td>
+    <td>Requested by LJ</td>
+    </tr>
+    <tr valign="top">
+    <td>n/a</td>
+    <td>July 6, 2015</td>
+    <td>1. Dashboard Charts.<br />
+                    
+                    </td>
+    <td>Requested by Jewel</td>
+    </tr>
+    </table>
+    
+    <h3><img id="img3" src="images/plus.jpg" alt="" style="margin-left:10px;cursor:pointer" onclick="show('pendingupdates','img3','img4')"/>
+    <img id="img4" src="images/minus.jpg" alt="" style="margin-left:10px;display:none;cursor:pointer" onclick="hide('pendingupdates','img3','img4')"/> PENDING REQUEST</h3>
+    <table id="pendingupdates" style="margin-left:10px;display:none;margin:10px;background-color:#FFDDBB; border-collapse:collapse;width:90%" cellpadding="5" border="1">
+    <tr valign="top" style="background-color:orange;color:#222222;font-weight:bold">    
+    <td width="15%">Requested Date</td>
+    <td width="70%">Request Details</td>
+    
+    <td width="15%">Requested By</td>
+    </tr>
+    <tr valign="top">    
+    <td>June 10, 2016</td>
+    <td>1. Discrepancies on Document Status report
+                    
+                    </td>
+    <td>Requested by Region III</td>
+    </tr>
+    <tr valign="top">    
+    <td>June 8, 2016</td>
+    <td>1. Additional Requests/Changes after Training by PMS
+                    
+                    </td>
+    <td>Requested by Sheen and Jewel</td>
+    </tr>
+    <tr valign="top">
+    
+    <td>May 2, 2016</td>
+    <td>1. Security updates (a. HTTPS, Complex Password, Session Hijacking, etc) .<br />
+                    
+                    </td>
+                    
+    <td>Suggested by George</td>
+    </tr>
+    </table>
+    </div>
+</div>
+</body>
+</html>

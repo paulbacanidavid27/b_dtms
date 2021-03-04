@@ -1,0 +1,108 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Login.master.vb" Inherits="dms.Login2" %>
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/docview.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript">
+        var ut_timeleft = new common_timeleft_class();
+
+        function common_timeleft_class() {
+
+        }
+
+        common_timeleft_class.prototype.start = function () {
+            var mpe_timer_warning;
+            var lo_timer_message;
+            var vtlusd;
+
+            var v_minutes, v_seconds, v_hours;
+            var v_seconds_left;
+            var s_minutes, s_seconds, s_hours;
+
+
+
+
+            vtlusd = document.getElementById("tlusd")
+            
+            if (vtlusd.value != "") {
+                v_seconds_left = vtlusd.value;
+
+                if (v_seconds_left > 0) {
+                    v_seconds_left = v_seconds_left - 1;
+
+                    v_minutes = Math.floor(v_seconds_left / 60);
+                    v_hours = Math.floor(v_minutes / 60);
+                    v_seconds = (v_seconds_left % 60);
+
+                    s_hours = ('00' + v_hours);
+                    s_hours = s_hours.substring(s_hours.length - 2, s_hours.length);
+                    s_minutes = ('00' + v_minutes);
+                    s_minutes = s_minutes.substring(s_minutes.length - 2, s_minutes.length);
+                    s_seconds = ('00' + v_seconds);
+                    s_seconds = s_seconds.substring(s_seconds.length - 2, s_seconds.length);
+                    document.getElementById("pnltimer").style.display = "";
+                    document.getElementById("hrleft").innerHTML = s_hours;
+                    document.getElementById("mnleft").innerHTML = s_minutes;
+                    document.getElementById("scleft").innerHTML = s_seconds;
+                    vtlusd.value = v_seconds_left;
+
+
+
+                    setTimeout("ut_timeleft.start();", 1000);
+
+                } else {
+
+                    location.assign("maintenance.aspx");
+                }
+            }
+            return true;
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-color:#D9EEF9" oncontextmenu="return false;" onload="ut_timeleft.start()">
+
+    <form id="form1" runat="server" autocomplete="on">
+    <input id="tlusd" runat="server" clientidmode="Static" type="hidden" value=""/>
+    <asp:ScriptManager ID="ScriptManager1" runat="server"/> 
+    
+    <center>
+    
+   <div class="pagex" id="pga" style="height:100%;margin-top:100px;vertical-align:middle;" >        
+        
+        <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+        <td align="center"><asp:ImageButton ID="imgLogo" runat="server" imageurl="images/logo/loginlogo.png" Visible="true"  ToolTip="Version"/></td>        
+        </tr>      
+        
+        <tr>
+        <td></td>
+        </tr>
+        <tr>        
+        <td><asp:ContentPlaceHolder ID="MainContent" runat="server"/></td>
+        
+        </tr>        
+        </table>
+        <!--div class="main">        </div //-->        
+        
+    </div>
+    </center>
+    <div align="right" style="display:none;font-size:14pt;color:white;background-color: #FF0F0F; left:30%;width:40%;position: fixed;top:0px;border-bottom:solid 1px #222222;border-left:solid 1px #222222;border-right:solid 1px #222222;border-radius:0px 0px 5px 5px;box-shadow: 0px 2px 5px 1px #CCCCCC;visibility:visible;z-index:99999998" id="pnltimer">
+                           <marquee width="100%">
+                        <table cellpadding="0" cellspacing="0" style="border-collapse:collapse">
+                        <tr><td colspan="3" align="center">System Advisory!!! DMS will undergo system maintenance on <b><asp:Literal ID="lSM" runat="server"></asp:Literal></b>. Please refrain from using the system during this time. Time left until system shutdown - </td>
+                        <td align="right" id="hrleft" style="color:yellow;font-size:14pt;font-weight:bold;padding-left:10px;"></td><td align="left">h :</td><td align="right" style="color:#D5FFD5; font-size:14pt;font-weight:bold;padding-left:10px;" id="mnleft"></td><td align="left">m :</td><td align="right" style="color:#DFFFFF; font-size:14pt;font-weight:bold;padding-left:10px;" id="scleft"></td><td align="left">s</td></tr>
+                        </table>
+                        </marquee>
+     </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,79 @@
+Version 1.0.146(Test Site) - 8/26/2014
+- Add Personnel In-Charge criteria in Search screen
+- Add Personnel In-Charge column in the search result
+
+Version 1.0.145(Test Site) - 8/18/2014
+- Create additional filter for Dashboard
+
+
+Version 1.0.144(Test Site) - 8/15/2014
+- Allowed Viewing of Attachment in Archived Documents only for document type='Letters'
+- Moved to top of Days of Completion the Total Amount Released per Bureau report
+
+Version 1.0.143(Test Site) - 7/11/2012
+- Fixed Error in selecting document type
+- Included Date Issued in Total Amount Released Per Bureau
+
+Version 1.0.142(Test Site) - 7/9/2012
+- Allowed email used by inactive user to be used by other user 
+- Don't alllow locked user to be search in routing.
+- Implemented Document Indexed Report
+- Implemented Total Amount Released Per Bureau
+
+Version 1.0.141(Test Site)
+- Added Pending Document Count Graph
+- Revised the count and average days of completion
+- Implemented Top 10 Quickest Bureau
+- Implemented Top Aged Pending Bureau
+- Transferred Action Document and No Action document in Total Document Received.
+
+Version 1.0.140(Test Site)
+- Implemented List of Request Screen (Dashboard)
+- Implemented Document Completion Graph
+- Implemented Document Distribution Graph
+- Transfer the existing Dashboard to Recent Activities screen
+
+Version 1.0.109(Test Site) - 6/12/2014
+- Fix problem on Document Reply screen 
+- Allow Admin user to check-in documents 
+- Fixed Problem on Creating Duplicate Routing in Pending Tasks 
+
+Version 1.0.108(Test Site)
+- Added Notify Point Person when document is archived(5/14/2014)
+- Included Incoming/Outgoing Status
+- Added Document Uploaded Hourly Report
+- Changed Document Status to Document Action
+- Added Last Action in Document View screen
+- Added Notes field in the Document Upload screen
+- Implement Cancel Functionality in CC Routing
+- Included Type of Request and Sender in Search screen criteria
+
+Version 1.0.107(Test Site)
+- Implement Type of Request (Added Request Type Maintenance)
+- Modified Upload Document Screen to Include Request Type
+- Modified the Document Status report to include Type of Request
+- Modified the Group Status report to include Type of Request
+- Move Sender on top of Document Title on Acknowledgement Receipt
+- Allow Viewing of Attachment for user with the same office code of document or if the user has download access
+
+Version 1.0.106(Test Site)
+- Limit the size of task based on rows to display per page
+
+Version 1.0.103(Test Site)
+
+- Document Status Report New Layout
+- Cancel Routing now able to change Routed To in Print Receipt
+- Sender now available when re-printing acknowledgement receipt
+- Upload limit set to 32MB
+
+Version 1.0.91(Live Site)
+
+- Can create folders in Document Inbox. You can use this to organize the documents in your inbox.
+- Removed the uploaded by and office column in document screen.
+- Added Location column in document screen. This will show the last person assigned to the document.
+- Added Agency column in document screen.
+- Replaced Due Date with Date Sent on Task list. This will show when the document was routed.
+- Show the Subtask tab for subtask document to view all the other sub task of the document.
+- Added the parent link to the subtask list.
+- In the Document Status Report, set the status to "Closed" if the remarks is "NO ACTION REQUIRED".
+- Can now copy the other user group set-up when creating a new user group.

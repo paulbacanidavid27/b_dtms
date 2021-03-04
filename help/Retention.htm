@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Retention Disposable Schedules.</title>
+</head>
+<body>
+<h3>Retention Disposable Schedules</h3>
+<h5>This is a process that will determine the life expentancy of a record. It consist of 2 step process. The active period and storage period. These periods will be discussed further below.</h5>
+<h4>How to enable Retention Process</h2>
+<h5>1. Every record retention period will depend on the document type. To enable RDS process, go to Admin -> Document Types screen. Enable the RDS by clicking on Enable Retention check box.</h5>
+<h5>2. Setup the Active Period and Storage Period. Active period can be in Days, Months or Years. Set this based on requirement of the document type.</h5>
+<h5>3. Storage Period will be computed based on the this value. It can be in Days, Months or Years.</h5>
+<h4>How Retention Disposable Schedule Process Works</h2>
+<h5>1. When a document has been archived and the Document Index field called Date Received by Agency has been filled with date then the active period and storage period will be computed.</h5>
+<h4>Computation of Periods</h4>
+<h4>Active Period</h4>
+<h5>Start of Active Period = Date Received By Agenycy</h5>
+<h5>End of Active Period = Date Received By Agenycy + Active Period Based on the Document Type </h5>
+<h5>Start of Storage Period = End of Active Period  + 1 day </h5> 
+<h5>End of Storage Period = Start of Storage Period + Storage Period Based on the Document Type </h5>
+<h2>Notes</h2>
+<h5>Archiving of Documents can be done in two ways</h5>
+<h5>1. Upon uploading of documents.</h5>
+<h5>2. In the View screen where you can edit the properties of a document specifically the last action to set it to Archived.</h5>
+<h5>3. When you set the document to Archived and the Date Received by Agency has not been setup the Active and Storage period will not be setup.</h5>
+<h5>Date Received by Agency field</h5>
+<h5>1. Go to the View screen and click on Document Index tab. Look for the "Date Received By Agency" field and fill this with date. Once you click on save and the document status has been set to Archived. the retention period will be triggered.</h5>
+<h3>Retention Period Storage Due Date</h3>
+<h5>1. Once a document has reach the end of Storage Period, a background process will execute to move the file (pdf) of the record to another folder and the Document status will be set to purge.</h5>
+<h5>2. Purged documents can still be search but cannot be viewed anymore</h5>
+<h2>Email Notification</h2>
+<h5>Email notification for all the documents that will be purged 5 days before will be sent to the Purge Point Person.</h5>
+<h2>Where to setup email recepients</h2>
+<h5>Go to Admin -> Settings</h5>
+<h2>How To Cancel the Purging of Documents</h2>
+<h5>You can set the document status to "Open" or you can edit the Date Received by Agency index field.</h5>
+
+</body>
+</html>

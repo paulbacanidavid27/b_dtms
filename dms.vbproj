@@ -1,0 +1,1941 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{DBC78569-6A26-4A80-B16B-B496D1523A95}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>dms</RootNamespace>
+    <AssemblyName>dms</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>dms.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>None</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>dms.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.60919.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PdfSharp, Version=1.32.2608.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Agency.aspx" />
+    <Content Include="backupdb.aspx" />
+    <Content Include="bookmark.aspx" />
+    <Content Include="ChangeLog.aspx" />
+    <Content Include="alldocs.aspx" />
+    <Content Include="AccessDenied.aspx" />
+    <Content Include="DocForms.aspx" />
+    <Content Include="printfilelocal.aspx" />
+    <Content Include="ucFormAttach.ascx" />
+    <Content Include="ucReceiptRouteBlank2.ascx" />
+    <Content Include="ucReceiptRouteBlank.ascx" />
+    <Content Include="ucReceiptRoute.ascx" />
+    <Content Include="UserControlDocumentAttachIndex.ascx" />
+    <Content Include="DocReceivingReport.aspx" />
+    <Content Include="ReleasingStatusMonitoring.aspx" />
+    <Content Include="DocReceiving.aspx" />
+    <Content Include="PendingApprovalList.aspx" />
+    <Content Include="UserControlPendingList.ascx" />
+    <Content Include="UserControlForFollowUp.ascx" />
+    <Content Include="TrackRefNo.aspx" />
+    <Content Include="ReleasingMonitoringImport.aspx" />
+    <Content Include="viewattachment.aspx" />
+    <Content Include="DocumentUploadedDetails.aspx" />
+    <Content Include="DocumentChanges.aspx" />
+    <Content Include="UserControlIssuanceFolder.ascx" />
+    <Content Include="rptDocUploaded.aspx" />
+    <Content Include="UserControlGroupDocTypeAccess.ascx" />
+    <Content Include="usergroup.aspx" />
+    <Content Include="UserControlOfficeHoliday.ascx" />
+    <Content Include="UserControlAddOfficeHoliday.ascx" />
+    <Content Include="OfficeHoliday.aspx" />
+    <Content Include="UserControlCarbonCopy.ascx" />
+    <Content Include="UserControlConfidential.ascx" />
+    <Content Include="issuances.aspx" />
+    <Content Include="criteria_docsize.aspx" />
+    <Content Include="Logout.aspx" />
+    <Content Include="GroupStatus.aspx" />
+    <Content Include="DocumentStatusSummary.aspx" />
+    <Content Include="DocumentStatus.aspx" />
+    <Content Include="DeletedDocuments.aspx" />
+    <Content Include="DeletedDocumentCriteria.aspx" />
+    <Content Include="DocumentRoutingHistory.aspx" />
+    <Content Include="DocumentRoutingHistoryCriteria.aspx" />
+    <Content Include="GroupStatusSummary.aspx" />
+    <Content Include="DocumentArchivedPerUserCriteria.aspx" />
+    <Content Include="DocumentArchivedPerUserReport.aspx" />
+    <Content Include="DocumentArchivedReport.aspx" />
+    <Content Include="criteria_userdocarchived.aspx" />
+    <Content Include="criteria_recordsdisposition.aspx" />
+    <Content Include="DashboardDocList.aspx" />
+    <Content Include="help\Retention.htm" />
+    <Content Include="newdocs.aspx" />
+    <Content Include="sent.aspx" />
+    <Content Include="inbox.aspx" />
+    <Content Include="rptDocStatusSummary.aspx" />
+    <Content Include="rptDocUploadedHourlyGraph.aspx" />
+    <Content Include="rdsprocess.aspx" />
+    <Content Include="maintenance.aspx" />
+    <Content Include="office.aspx" />
+    <Content Include="DocumentReceivedCriteria.aspx" />
+    <Content Include="rptDocUploadedHrGraph.aspx" />
+    <Content Include="rptDocUploadedMonthlyGraph.aspx" />
+    <Content Include="DocumentListPerUser.aspx" />
+    <Content Include="DocumentReceived.aspx" />
+    <Content Include="DocumentListPerUserCriteria.aspx" />
+    <Content Include="rptUserDoc.aspx" />
+    <Content Include="ucRetention.ascx" />
+    <Content Include="ucUserList.ascx" />
+    <Content Include="ucViewFiles.ascx" />
+    <Content Include="Default.aspx" />
+    <Content Include="errorpage.aspx" />
+    <Content Include="DocumentIndexStatus.aspx" />
+    <Content Include="DocumentIndexStatusCriteria.aspx" />
+    <Content Include="rptReleasedAmountInvalid.aspx" />
+    <Content Include="rptReleasedAmount.aspx" />
+    <Content Include="criteria_release.aspx" />
+    <Content Include="ucDashboardGraph.ascx" />
+    <Content Include="updates.html" />
+    <Content Include="UserControlAddress.ascx" />
+    <Content Include="UserControlMainGroup.ascx" />
+    <Content Include="ucDashboardCount.ascx" />
+    <Content Include="ucDashboard.ascx" />
+    <Content Include="DashboardList.aspx" />
+    <Content Include="ucPromptEmail.ascx" />
+    <Content Include="DocumentUploadedHourlyCriteria.aspx" />
+    <Content Include="GroupStatusCriteria.aspx" />
+    <Content Include="DocRequestType.aspx" />
+    <Content Include="DocumentUploadedHourly.aspx" />
+    <Content Include="rptGroupStatus.aspx" />
+    <Content Include="ucPrompt.ascx" />
+    <Content Include="ucSubTask.ascx" />
+    <Content Include="ucDocUpload.ascx" />
+    <Content Include="ucCheckBox.ascx" />
+    <Content Include="ucReply.ascx" />
+    <Content Include="DocReceipt.aspx" />
+    <Content Include="DocStatus.aspx" />
+    <Content Include="ucImageButton.ascx" />
+    <Content Include="ucTrackStatusUsers.ascx" />
+    <Content Include="ucTrackStatus.ascx" />
+    <Content Include="rptDocStatus.aspx" />
+    <Content Include="DocumentStatusCriteria.aspx" />
+    <Content Include="ucAttach.ascx" />
+    <Content Include="ucConfirm.ascx" />
+    <Content Include="UserControlAttachment.ascx" />
+    <Content Include="UserControlFolder.ascx" />
+    <Content Include="UserControlImgViewer2.ascx" />
+    <Content Include="UserControlDocViewer2.ascx" />
+    <Content Include="UserControlOffice.ascx" />
+    <Content Include="UserControlPDFViewer2.ascx" />
+    <Content Include="getUser.asmx" />
+    <Content Include="rptOverdue.aspx" />
+    <Content Include="criteria_overdue.aspx" />
+    <Content Include="ucMultipleUpload.ascx" />
+    <Content Include="ucReceipt.ascx" />
+    <Content Include="ucRetrieveDocs.ascx" />
+    <Content Include="ucUploadFiles.ascx" />
+    <Content Include="UserControlOverDue.ascx" />
+    <Content Include="DocSettings.aspx" />
+    <Content Include="ucButton.ascx" />
+    <Content Include="ucHeader.ascx" />
+    <Content Include="ucUploadButton.ascx" />
+    <Content Include="UserControlProfile.ascx" />
+    <Content Include="UserControlPending.ascx" />
+    <Content Include="UserControlDocViewer.ascx" />
+    <Content Include="UserControlAdminMenuH.ascx" />
+    <Content Include="dashboard.aspx" />
+    <Content Include="DocumentUploaded.aspx" />
+    <Content Include="rptDocHistory.aspx" />
+    <Content Include="DocumentIndex.aspx" />
+    <Content Include="Holiday.aspx" />
+    <Content Include="UserControlAddHoliday.ascx" />
+    <Content Include="UserControlAddTag.ascx" />
+    <Content Include="UserControlApproval.ascx" />
+    <Content Include="UserControlBookMark.ascx" />
+    <Content Include="UserControlDashBoard.ascx" />
+    <Content Include="UserControlDocCount.ascx" />
+    <Content Include="UserControlDocLink.ascx" />
+    <Content Include="UserControlFilter.ascx" />
+    <Content Include="UserControlHoliday.ascx" />
+    <Content Include="UserControlDocAccess.ascx" />
+    <Content Include="UserControlEmail.ascx" />
+    <Content Include="UserControlImgViewer.ascx" />
+    <Content Include="UserControlPDFViewer.ascx" />
+    <Content Include="UserControlReport.ascx" />
+    <Content Include="UserControlShare.ascx" />
+    <Content Include="userControlTab.ascx" />
+    <Content Include="UserControlTag.ascx" />
+    <Content Include="UserControlUpload.ascx" />
+    <Content Include="UserControlVersion.ascx" />
+    <Content Include="UserControlWorkSched.ascx" />
+    <Content Include="printfile.aspx" />
+    <Content Include="viewfilelocal.aspx" />
+    <Content Include="viewfile.aspx" />
+    <Content Include="criteria_dochistory.aspx" />
+    <Content Include="DocumentIndexCriteria.aspx" />
+    <Content Include="DocumentUploadedCriteria.aspx" />
+    <Content Include="doctype.aspx" />
+    <Content Include="forgot.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="home.aspx" />
+    <Content Include="Import.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="purge.aspx" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\print.js" />
+    <Content Include="Scripts\print_report.js" />
+    <Content Include="Search.aspx" />
+    <Content Include="Styles\border-radius.htc" />
+    <Content Include="Styles\docview.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="ucHr.ascx" />
+    <Content Include="user.aspx" />
+    <Content Include="UserControlCheckBox.ascx" />
+    <Content Include="UserControlDocNotes.ascx" />
+    <Content Include="UserControlDocRouting.ascx" />
+    <Content Include="UserControlDocumentIndex.ascx" />
+    <Content Include="UserControlPager.ascx" />
+    <Content Include="view.aspx" />
+    <Content Include="ViewDoc.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Agency.aspx.designer.vb">
+      <DependentUpon>Agency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Agency.aspx.vb">
+      <DependentUpon>Agency.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="backupdb.aspx.designer.vb">
+      <DependentUpon>backupdb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="backupdb.aspx.vb">
+      <DependentUpon>backupdb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bookmark.aspx.designer.vb">
+      <DependentUpon>bookmark.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bookmark.aspx.vb">
+      <DependentUpon>bookmark.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="commonclasses\clsDocForms.vb" />
+    <Compile Include="commonclasses\FormHistory.vb" />
+    <Compile Include="docuvu5DataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>docuvu5DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeLog.aspx.designer.vb">
+      <DependentUpon>ChangeLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeLog.aspx.vb">
+      <DependentUpon>ChangeLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="commonclasses\clsCrdMonitoring.vb" />
+    <Compile Include="commonclasses\clsCrdMonitoringReport.vb" />
+    <Compile Include="commonclasses\clsErrHandler.vb" />
+    <Compile Include="commonclasses\clsForgotPassword.vb" />
+    <Compile Include="commonclasses\clsSqlConn.vb" />
+    <Compile Include="commonclasses\cls_storedproc.vb" />
+    <Compile Include="commonclasses\DocSession.vb" />
+    <Compile Include="commonclasses\ConvertCSV.vb" />
+    <Compile Include="alldocs.aspx.designer.vb">
+      <DependentUpon>alldocs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="alldocs.aspx.vb">
+      <DependentUpon>alldocs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccessDenied.aspx.designer.vb">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccessDenied.aspx.vb">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="commonclasses\clsDocMonitoringReceiving.vb" />
+    <Compile Include="Pdf2Print.ashx.vb">
+      <DependentUpon>Pdf2Print.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="printfilelocal.aspx.designer.vb">
+      <DependentUpon>printfilelocal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="printfilelocal.aspx.vb">
+      <DependentUpon>printfilelocal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="releasemonitoring.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>releasemonitoring.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DocForms.aspx.designer.vb">
+      <DependentUpon>DocForms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocForms.aspx.vb">
+      <DependentUpon>DocForms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucFormAttach.ascx.designer.vb">
+      <DependentUpon>ucFormAttach.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucFormAttach.ascx.vb">
+      <DependentUpon>ucFormAttach.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucReceiptRouteBlank2.ascx.designer.vb">
+      <DependentUpon>ucReceiptRouteBlank2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucReceiptRouteBlank2.ascx.vb">
+      <DependentUpon>ucReceiptRouteBlank2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucReceiptRouteBlank.ascx.designer.vb">
+      <DependentUpon>ucReceiptRouteBlank.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucReceiptRouteBlank.ascx.vb">
+      <DependentUpon>ucReceiptRouteBlank.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucReceiptRoute.ascx.designer.vb">
+      <DependentUpon>ucReceiptRoute.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucReceiptRoute.ascx.vb">
+      <DependentUpon>ucReceiptRoute.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlDocumentAttachIndex.ascx.designer.vb">
+      <DependentUpon>UserControlDocumentAttachIndex.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlDocumentAttachIndex.ascx.vb">
+      <DependentUpon>UserControlDocumentAttachIndex.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocReceivingReport.aspx.designer.vb">
+      <DependentUpon>DocReceivingReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocReceivingReport.aspx.vb">
+      <DependentUpon>DocReceivingReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dsoMatrixDocReceiving.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsoMatrixDocReceiving.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReleasingStatusMonitoring.aspx.designer.vb">
+      <DependentUpon>ReleasingStatusMonitoring.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReleasingStatusMonitoring.aspx.vb">
+      <DependentUpon>ReleasingStatusMonitoring.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DocReceiving.aspx.designer.vb">
+      <DependentUpon>DocReceiving.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocReceiving.aspx.vb">
+      <DependentUpon>DocReceiving.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PendingApprovalList.aspx.designer.vb">
+      <DependentUpon>PendingApprovalList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PendingApprovalList.aspx.vb">
+      <DependentUpon>PendingApprovalList.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="daPendingApprovalList.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>daPendingApprovalList.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlPendingList.ascx.designer.vb">
+      <DependentUpon>UserControlPendingList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlPendingList.ascx.vb">
+      <DependentUpon>UserControlPendingList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlForFollowUp.ascx.designer.vb">
+      <DependentUpon>UserControlForFollowUp.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlForFollowUp.ascx.vb">
+      <DependentUpon>UserControlForFollowUp.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrackRefNo.aspx.designer.vb">
+      <DependentUpon>TrackRefNo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrackRefNo.aspx.vb">
+      <DependentUpon>TrackRefNo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReleasingMonitoringImport.aspx.designer.vb">
+      <DependentUpon>ReleasingMonitoringImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReleasingMonitoringImport.aspx.vb">
+      <DependentUpon>ReleasingMonitoringImport.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="viewattachment.aspx.designer.vb">
+      <DependentUpon>viewattachment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewattachment.aspx.vb">
+      <DependentUpon>viewattachment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dashboard.aspx.designer.vb">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentUploadedDetails.aspx.designer.vb">
+      <DependentUpon>DocumentUploadedDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentUploadedDetails.aspx.vb">
+      <DependentUpon>DocumentUploadedDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datadocumentuploaddetails.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datadocumentuploaddetails.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentChanges.aspx.designer.vb">
+      <DependentUpon>DocumentChanges.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentChanges.aspx.vb">
+      <DependentUpon>DocumentChanges.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Monitoring.Master.designer.vb">
+      <DependentUpon>Monitoring.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Monitoring.Master.vb">
+      <DependentUpon>Monitoring.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlIssuanceFolder.ascx.designer.vb">
+      <DependentUpon>UserControlIssuanceFolder.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlIssuanceFolder.ascx.vb">
+      <DependentUpon>UserControlIssuanceFolder.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptDocUploadData.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDocUploadData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="rptDocUploaded.aspx.designer.vb">
+      <DependentUpon>rptDocUploaded.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptDocUploaded.aspx.vb">
+      <DependentUpon>rptDocUploaded.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlGroupDocTypeAccess.ascx.designer.vb">
+      <DependentUpon>UserControlGroupDocTypeAccess.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlGroupDocTypeAccess.ascx.vb">
+      <DependentUpon>UserControlGroupDocTypeAccess.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usergroup.aspx.designer.vb">
+      <DependentUpon>usergroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="usergroup.aspx.vb">
+      <DependentUpon>usergroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlOfficeHoliday.ascx.designer.vb">
+      <DependentUpon>UserControlOfficeHoliday.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlOfficeHoliday.ascx.vb">
+      <DependentUpon>UserControlOfficeHoliday.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlAddOfficeHoliday.ascx.designer.vb">
+      <DependentUpon>UserControlAddOfficeHoliday.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlAddOfficeHoliday.ascx.vb">
+      <DependentUpon>UserControlAddOfficeHoliday.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OfficeHoliday.aspx.designer.vb">
+      <DependentUpon>OfficeHoliday.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OfficeHoliday.aspx.vb">
+      <DependentUpon>OfficeHoliday.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="UserControlCarbonCopy.ascx.designer.vb">
+      <DependentUpon>UserControlCarbonCopy.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlCarbonCopy.ascx.vb">
+      <DependentUpon>UserControlCarbonCopy.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlConfidential.ascx.designer.vb">
+      <DependentUpon>UserControlConfidential.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlConfidential.ascx.vb">
+      <DependentUpon>UserControlConfidential.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="issuances.aspx.designer.vb">
+      <DependentUpon>issuances.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="issuances.aspx.vb">
+      <DependentUpon>issuances.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="criteria_docsize.aspx.designer.vb">
+      <DependentUpon>criteria_docsize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="criteria_docsize.aspx.vb">
+      <DependentUpon>criteria_docsize.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.vb">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.vb">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GroupStatus.aspx.designer.vb">
+      <DependentUpon>GroupStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GroupStatus.aspx.vb">
+      <DependentUpon>GroupStatus.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DocumentStatusSummary.aspx.designer.vb">
+      <DependentUpon>DocumentStatusSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentStatusSummary.aspx.vb">
+      <DependentUpon>DocumentStatusSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocumentStatus.aspx.designer.vb">
+      <DependentUpon>DocumentStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentStatus.aspx.vb">
+      <DependentUpon>DocumentStatus.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DeletedDocuments.aspx.designer.vb">
+      <DependentUpon>DeletedDocuments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeletedDocuments.aspx.vb">
+      <DependentUpon>DeletedDocuments.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DeletedDocumentCriteria.aspx.designer.vb">
+      <DependentUpon>DeletedDocumentCriteria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeletedDocumentCriteria.aspx.vb">
+      <DependentUpon>DeletedDocumentCriteria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocumentRoutingHistory.aspx.designer.vb">
+      <DependentUpon>DocumentRoutingHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentRoutingHistory.aspx.vb">
+      <DependentUpon>DocumentRoutingHistory.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DocumentRoutingHistoryCriteria.aspx.designer.vb">
+      <DependentUpon>DocumentRoutingHistoryCriteria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentRoutingHistoryCriteria.aspx.vb">
+      <DependentUpon>DocumentRoutingHistoryCriteria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dspersonnel.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dspersonnel.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsPersonnelDocCount.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPersonnelDocCount.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GroupStatusSummary.aspx.designer.vb">
+      <DependentUpon>GroupStatusSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GroupStatusSummary.aspx.vb">
+      <DependentUpon>GroupStatusSummary.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DocumentArchivedPerUserCriteria.aspx.designer.vb">
+      <DependentUpon>DocumentArchivedPerUserCriteria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentArchivedPerUserCriteria.aspx.vb">
+      <DependentUpon>DocumentArchivedPerUserCriteria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocumentArchivedPerUserReport.aspx.designer.vb">
+      <DependentUpon>DocumentArchivedPerUserReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentArchivedPerUserReport.aspx.vb">
+      <DependentUpon>DocumentArchivedPerUserReport.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DocumentArchivedReport.aspx.designer.vb">
+      <DependentUpon>DocumentArchivedReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentArchivedReport.aspx.vb">
+      <DependentUpon>DocumentArchivedReport.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="criteria_userdocarchived.aspx.designer.vb">
+      <DependentUpon>criteria_userdocarchived.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="criteria_userdocarchived.aspx.vb">
+      <DependentUpon>criteria_userdocarchived.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="criteria_recordsdisposition.aspx.designer.vb">
+      <DependentUpon>criteria_recordsdisposition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="criteria_recordsdisposition.aspx.vb">
+      <DependentUpon>criteria_recordsdisposition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DashboardDocList.aspx.designer.vb">
+      <DependentUpon>DashboardDocList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DashboardDocList.aspx.vb">
+      <DependentUpon>DashboardDocList.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="doDocumentArchived.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>doDocumentArchived.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsDBL.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDBL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsDocArchived.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDocArchived.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsetRecordsDisposition.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsetRecordsDisposition.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="newdocs.aspx.designer.vb">
+      <DependentUpon>newdocs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="newdocs.aspx.vb">
+      <DependentUpon>newdocs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sent.aspx.designer.vb">
+      <DependentUpon>sent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sent.aspx.vb">
+      <DependentUpon>sent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="inbox.aspx.designer.vb">
+      <DependentUpon>inbox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="inbox.aspx.vb">
+      <DependentUpon>inbox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptDocStatusSummary.aspx.designer.vb">
+      <DependentUpon>rptDocStatusSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptDocStatusSummary.aspx.vb">
+      <DependentUpon>rptDocStatusSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptDocUploadedHourlyGraph.aspx.designer.vb">
+      <DependentUpon>rptDocUploadedHourlyGraph.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptDocUploadedHourlyGraph.aspx.vb">
+      <DependentUpon>rptDocUploadedHourlyGraph.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="commonclasses\docPurge.vb" />
+    <Compile Include="rdsprocess.aspx.designer.vb">
+      <DependentUpon>rdsprocess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rdsprocess.aspx.vb">
+      <DependentUpon>rdsprocess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="maintenance.aspx.designer.vb">
+      <DependentUpon>maintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="maintenance.aspx.vb">
+      <DependentUpon>maintenance.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="office.aspx.designer.vb">
+      <DependentUpon>office.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="office.aspx.vb">
+      <DependentUpon>office.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocumentReceivedCriteria.aspx.designer.vb">
+      <DependentUpon>DocumentReceivedCriteria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentReceivedCriteria.aspx.vb">
+      <DependentUpon>DocumentReceivedCriteria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MailException.vb" />
+    <Compile Include="rds_rpt_deliverontime.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rds_rpt_deliverontime.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="rptDocUploadedHrGraph.aspx.designer.vb">
+      <DependentUpon>rptDocUploadedHrGraph.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptDocUploadedHrGraph.aspx.vb">
+      <DependentUpon>rptDocUploadedHrGraph.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rptDocUploadedMonthlyGraph.aspx.designer.vb">
+      <DependentUpon>rptDocUploadedMonthlyGraph.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptDocUploadedMonthlyGraph.aspx.vb">
+      <DependentUpon>rptDocUploadedMonthlyGraph.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocumentListPerUser.aspx.designer.vb">
+      <DependentUpon>DocumentListPerUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentListPerUser.aspx.vb">
+      <DependentUpon>DocumentListPerUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocumentReceived.aspx.designer.vb">
+      <DependentUpon>DocumentReceived.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentReceived.aspx.vb">
+      <DependentUpon>DocumentReceived.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DocumentListPerUserCriteria.aspx.designer.vb">
+      <DependentUpon>DocumentListPerUserCriteria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentListPerUserCriteria.aspx.vb">
+      <DependentUpon>DocumentListPerUserCriteria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptUserDoc.aspx.designer.vb">
+      <DependentUpon>rptUserDoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptUserDoc.aspx.vb">
+      <DependentUpon>rptUserDoc.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="commonclasses\DocAddress.vb" />
+    <Compile Include="ucDailyStorageConsumption.ascx.designer.vb">
+      <DependentUpon>ucDailyStorageConsumption.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucDailyStorageConsumption.ascx.vb">
+      <DependentUpon>ucDailyStorageConsumption.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucRetention.ascx.designer.vb">
+      <DependentUpon>ucRetention.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucRetention.ascx.vb">
+      <DependentUpon>ucRetention.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucUserList.ascx.designer.vb">
+      <DependentUpon>ucUserList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucUserList.ascx.vb">
+      <DependentUpon>ucUserList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucViewFiles.ascx.designer.vb">
+      <DependentUpon>ucViewFiles.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucViewFiles.ascx.vb">
+      <DependentUpon>ucViewFiles.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="errorpage.aspx.designer.vb">
+      <DependentUpon>errorpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="errorpage.aspx.vb">
+      <DependentUpon>errorpage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DocumentIndexStatus.aspx.designer.vb">
+      <DependentUpon>DocumentIndexStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentIndexStatus.aspx.vb">
+      <DependentUpon>DocumentIndexStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocumentIndexStatusCriteria.aspx.designer.vb">
+      <DependentUpon>DocumentIndexStatusCriteria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentIndexStatusCriteria.aspx.vb">
+      <DependentUpon>DocumentIndexStatusCriteria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptReleasedAmountInvalid.aspx.designer.vb">
+      <DependentUpon>rptReleasedAmountInvalid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptReleasedAmountInvalid.aspx.vb">
+      <DependentUpon>rptReleasedAmountInvalid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptReleasedAmount.aspx.designer.vb">
+      <DependentUpon>rptReleasedAmount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptReleasedAmount.aspx.vb">
+      <DependentUpon>rptReleasedAmount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="criteria_release.aspx.designer.vb">
+      <DependentUpon>criteria_release.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="criteria_release.aspx.vb">
+      <DependentUpon>criteria_release.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucDashboardGraph.ascx.designer.vb">
+      <DependentUpon>ucDashboardGraph.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucDashboardGraph.ascx.vb">
+      <DependentUpon>ucDashboardGraph.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="commonclasses\DocMainGroup.vb" />
+    <Compile Include="UserControlAddress.ascx.designer.vb">
+      <DependentUpon>UserControlAddress.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlAddress.ascx.vb">
+      <DependentUpon>UserControlAddress.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlMainGroup.ascx.designer.vb">
+      <DependentUpon>UserControlMainGroup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlMainGroup.ascx.vb">
+      <DependentUpon>UserControlMainGroup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucDashboardCount.ascx.designer.vb">
+      <DependentUpon>ucDashboardCount.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucDashboardCount.ascx.vb">
+      <DependentUpon>ucDashboardCount.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucDashboard.ascx.designer.vb">
+      <DependentUpon>ucDashboard.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucDashboard.ascx.vb">
+      <DependentUpon>ucDashboard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DashboardList.aspx.designer.vb">
+      <DependentUpon>DashboardList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DashboardList.aspx.vb">
+      <DependentUpon>DashboardList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucPromptEmail.ascx.designer.vb">
+      <DependentUpon>ucPromptEmail.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucPromptEmail.ascx.vb">
+      <DependentUpon>ucPromptEmail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocumentUploadedHourlyCriteria.aspx.designer.vb">
+      <DependentUpon>DocumentUploadedHourlyCriteria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentUploadedHourlyCriteria.aspx.vb">
+      <DependentUpon>DocumentUploadedHourlyCriteria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GroupStatusCriteria.aspx.designer.vb">
+      <DependentUpon>GroupStatusCriteria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GroupStatusCriteria.aspx.vb">
+      <DependentUpon>GroupStatusCriteria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="commonclasses\docRequest.vb" />
+    <Compile Include="DocRequestType.aspx.designer.vb">
+      <DependentUpon>DocRequestType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocRequestType.aspx.vb">
+      <DependentUpon>DocRequestType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocumentUploadedHourly.aspx.designer.vb">
+      <DependentUpon>DocumentUploadedHourly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentUploadedHourly.aspx.vb">
+      <DependentUpon>DocumentUploadedHourly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptGroupStatus.aspx.designer.vb">
+      <DependentUpon>rptGroupStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptGroupStatus.aspx.vb">
+      <DependentUpon>rptGroupStatus.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ucPrompt.ascx.designer.vb">
+      <DependentUpon>ucPrompt.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucPrompt.ascx.vb">
+      <DependentUpon>ucPrompt.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucSubTask.ascx.designer.vb">
+      <DependentUpon>ucSubTask.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucSubTask.ascx.vb">
+      <DependentUpon>ucSubTask.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucDocUpload.ascx.designer.vb">
+      <DependentUpon>ucDocUpload.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucDocUpload.ascx.vb">
+      <DependentUpon>ucDocUpload.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucCheckBox.ascx.designer.vb">
+      <DependentUpon>ucCheckBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucCheckBox.ascx.vb">
+      <DependentUpon>ucCheckBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucReply.ascx.designer.vb">
+      <DependentUpon>ucReply.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucReply.ascx.vb">
+      <DependentUpon>ucReply.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocReceipt.aspx.designer.vb">
+      <DependentUpon>DocReceipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocReceipt.aspx.vb">
+      <DependentUpon>DocReceipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="commonclasses\docReceipts.vb" />
+    <Compile Include="DocStatus.aspx.designer.vb">
+      <DependentUpon>DocStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocStatus.aspx.vb">
+      <DependentUpon>DocStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucImageButton.ascx.designer.vb">
+      <DependentUpon>ucImageButton.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucImageButton.ascx.vb">
+      <DependentUpon>ucImageButton.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucTrackStatusUsers.ascx.designer.vb">
+      <DependentUpon>ucTrackStatusUsers.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucTrackStatusUsers.ascx.vb">
+      <DependentUpon>ucTrackStatusUsers.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucTrackStatus.ascx.designer.vb">
+      <DependentUpon>ucTrackStatus.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucTrackStatus.ascx.vb">
+      <DependentUpon>ucTrackStatus.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="commonclasses\DocAttachment.vb" />
+    <Compile Include="commonclasses\DocOffice.vb" />
+    <Compile Include="rptDocStatus.aspx.designer.vb">
+      <DependentUpon>rptDocStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptDocStatus.aspx.vb">
+      <DependentUpon>rptDocStatus.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DocumentStatusCriteria.aspx.designer.vb">
+      <DependentUpon>DocumentStatusCriteria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentStatusCriteria.aspx.vb">
+      <DependentUpon>DocumentStatusCriteria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucAttach.ascx.designer.vb">
+      <DependentUpon>ucAttach.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucAttach.ascx.vb">
+      <DependentUpon>ucAttach.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucConfirm.ascx.designer.vb">
+      <DependentUpon>ucConfirm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucConfirm.ascx.vb">
+      <DependentUpon>ucConfirm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlAttachment.ascx.designer.vb">
+      <DependentUpon>UserControlAttachment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlAttachment.ascx.vb">
+      <DependentUpon>UserControlAttachment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlFolder.ascx.designer.vb">
+      <DependentUpon>UserControlFolder.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlFolder.ascx.vb">
+      <DependentUpon>UserControlFolder.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlImgViewer2.ascx.designer.vb">
+      <DependentUpon>UserControlImgViewer2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlImgViewer2.ascx.vb">
+      <DependentUpon>UserControlImgViewer2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlDocViewer2.ascx.designer.vb">
+      <DependentUpon>UserControlDocViewer2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlDocViewer2.ascx.vb">
+      <DependentUpon>UserControlDocViewer2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlOffice.ascx.designer.vb">
+      <DependentUpon>UserControlOffice.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlOffice.ascx.vb">
+      <DependentUpon>UserControlOffice.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlPDFViewer2.ascx.designer.vb">
+      <DependentUpon>UserControlPDFViewer2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlPDFViewer2.ascx.vb">
+      <DependentUpon>UserControlPDFViewer2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="commonclasses\DocBookmark.vb" />
+    <Compile Include="getUser.asmx.vb">
+      <DependentUpon>getUser.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Pdf2Printer.ashx.vb">
+      <DependentUpon>Pdf2Printer.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="rptOverdue.aspx.designer.vb">
+      <DependentUpon>rptOverdue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptOverdue.aspx.vb">
+      <DependentUpon>rptOverdue.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="criteria_overdue.aspx.designer.vb">
+      <DependentUpon>criteria_overdue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="criteria_overdue.aspx.vb">
+      <DependentUpon>criteria_overdue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucMultipleUpload.ascx.designer.vb">
+      <DependentUpon>ucMultipleUpload.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucMultipleUpload.ascx.vb">
+      <DependentUpon>ucMultipleUpload.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucReceipt.ascx.designer.vb">
+      <DependentUpon>ucReceipt.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucReceipt.ascx.vb">
+      <DependentUpon>ucReceipt.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucRetrieveDocs.ascx.designer.vb">
+      <DependentUpon>ucRetrieveDocs.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucRetrieveDocs.ascx.vb">
+      <DependentUpon>ucRetrieveDocs.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucUploadFiles.ascx.designer.vb">
+      <DependentUpon>ucUploadFiles.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucUploadFiles.ascx.vb">
+      <DependentUpon>ucUploadFiles.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlOverDue.ascx.designer.vb">
+      <DependentUpon>UserControlOverDue.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlOverDue.ascx.vb">
+      <DependentUpon>UserControlOverDue.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="commonclasses\DocSetting.vb" />
+    <Compile Include="DocSettings.aspx.designer.vb">
+      <DependentUpon>DocSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocSettings.aspx.vb">
+      <DependentUpon>DocSettings.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ucButton.ascx.designer.vb">
+      <DependentUpon>ucButton.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucButton.ascx.vb">
+      <DependentUpon>ucButton.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucHeader.ascx.designer.vb">
+      <DependentUpon>ucHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucHeader.ascx.vb">
+      <DependentUpon>ucHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucUploadButton.ascx.designer.vb">
+      <DependentUpon>ucUploadButton.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucUploadButton.ascx.vb">
+      <DependentUpon>ucUploadButton.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlProfile.ascx.designer.vb">
+      <DependentUpon>UserControlProfile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlProfile.ascx.vb">
+      <DependentUpon>UserControlProfile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlPending.ascx.designer.vb">
+      <DependentUpon>UserControlPending.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlPending.ascx.vb">
+      <DependentUpon>UserControlPending.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlDocViewer.ascx.designer.vb">
+      <DependentUpon>UserControlDocViewer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlDocViewer.ascx.vb">
+      <DependentUpon>UserControlDocViewer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="commonclasses\DocHistory.vb" />
+    <Compile Include="UserControlAdminMenuH.ascx.designer.vb">
+      <DependentUpon>UserControlAdminMenuH.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlAdminMenuH.ascx.vb">
+      <DependentUpon>UserControlAdminMenuH.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dashboard.aspx.vb">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocumentUploaded.aspx.designer.vb">
+      <DependentUpon>DocumentUploaded.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentUploaded.aspx.vb">
+      <DependentUpon>DocumentUploaded.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rptDocHistory.aspx.designer.vb">
+      <DependentUpon>rptDocHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptDocHistory.aspx.vb">
+      <DependentUpon>rptDocHistory.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="commonclasses\DbParam.vb" />
+    <Compile Include="commonclasses\DbTran.vb" />
+    <Compile Include="Report.Master.designer.vb">
+      <DependentUpon>Report.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Report.Master.vb">
+      <DependentUpon>Report.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocumentIndex.aspx.designer.vb">
+      <DependentUpon>DocumentIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentIndex.aspx.vb">
+      <DependentUpon>DocumentIndex.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="commonclasses\DocHoliday.vb" />
+    <Compile Include="Holiday.aspx.designer.vb">
+      <DependentUpon>Holiday.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Holiday.aspx.vb">
+      <DependentUpon>Holiday.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="UserControlAddHoliday.ascx.designer.vb">
+      <DependentUpon>UserControlAddHoliday.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlAddHoliday.ascx.vb">
+      <DependentUpon>UserControlAddHoliday.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlAddTag.ascx.designer.vb">
+      <DependentUpon>UserControlAddTag.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlAddTag.ascx.vb">
+      <DependentUpon>UserControlAddTag.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlApproval.ascx.designer.vb">
+      <DependentUpon>UserControlApproval.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlApproval.ascx.vb">
+      <DependentUpon>UserControlApproval.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlBookMark.ascx.designer.vb">
+      <DependentUpon>UserControlBookMark.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlBookMark.ascx.vb">
+      <DependentUpon>UserControlBookMark.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlDashBoard.ascx.designer.vb">
+      <DependentUpon>UserControlDashBoard.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlDashBoard.ascx.vb">
+      <DependentUpon>UserControlDashBoard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlDocCount.ascx.designer.vb">
+      <DependentUpon>UserControlDocCount.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlDocCount.ascx.vb">
+      <DependentUpon>UserControlDocCount.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlDocLink.ascx.designer.vb">
+      <DependentUpon>UserControlDocLink.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlDocLink.ascx.vb">
+      <DependentUpon>UserControlDocLink.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlFilter.ascx.designer.vb">
+      <DependentUpon>UserControlFilter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlFilter.ascx.vb">
+      <DependentUpon>UserControlFilter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlHoliday.ascx.designer.vb">
+      <DependentUpon>UserControlHoliday.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlHoliday.ascx.vb">
+      <DependentUpon>UserControlHoliday.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlDocAccess.ascx.designer.vb">
+      <DependentUpon>UserControlDocAccess.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlDocAccess.ascx.vb">
+      <DependentUpon>UserControlDocAccess.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlEmail.ascx.designer.vb">
+      <DependentUpon>UserControlEmail.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlEmail.ascx.vb">
+      <DependentUpon>UserControlEmail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlImgViewer.ascx.designer.vb">
+      <DependentUpon>UserControlImgViewer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlImgViewer.ascx.vb">
+      <DependentUpon>UserControlImgViewer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlPDFViewer.ascx.designer.vb">
+      <DependentUpon>UserControlPDFViewer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlPDFViewer.ascx.vb">
+      <DependentUpon>UserControlPDFViewer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlReport.ascx.designer.vb">
+      <DependentUpon>UserControlReport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlReport.ascx.vb">
+      <DependentUpon>UserControlReport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlShare.ascx.designer.vb">
+      <DependentUpon>UserControlShare.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlShare.ascx.vb">
+      <DependentUpon>UserControlShare.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userControlTab.ascx.designer.vb">
+      <DependentUpon>userControlTab.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="userControlTab.ascx.vb">
+      <DependentUpon>userControlTab.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlTag.ascx.designer.vb">
+      <DependentUpon>UserControlTag.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlTag.ascx.vb">
+      <DependentUpon>UserControlTag.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlUpload.ascx.designer.vb">
+      <DependentUpon>UserControlUpload.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlUpload.ascx.vb">
+      <DependentUpon>UserControlUpload.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlVersion.ascx.designer.vb">
+      <DependentUpon>UserControlVersion.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlVersion.ascx.vb">
+      <DependentUpon>UserControlVersion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlWorkSched.ascx.designer.vb">
+      <DependentUpon>UserControlWorkSched.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlWorkSched.ascx.vb">
+      <DependentUpon>UserControlWorkSched.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="printfile.aspx.designer.vb">
+      <DependentUpon>printfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="printfile.aspx.vb">
+      <DependentUpon>printfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewfilelocal.aspx.designer.vb">
+      <DependentUpon>viewfilelocal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewfilelocal.aspx.vb">
+      <DependentUpon>viewfilelocal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewfile.aspx.designer.vb">
+      <DependentUpon>viewfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewfile.aspx.vb">
+      <DependentUpon>viewfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="criteria_dochistory.aspx.designer.vb">
+      <DependentUpon>criteria_dochistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="criteria_dochistory.aspx.vb">
+      <DependentUpon>criteria_dochistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocumentIndexCriteria.aspx.designer.vb">
+      <DependentUpon>DocumentIndexCriteria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentIndexCriteria.aspx.vb">
+      <DependentUpon>DocumentIndexCriteria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocumentUploadedCriteria.aspx.designer.vb">
+      <DependentUpon>DocumentUploadedCriteria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentUploadedCriteria.aspx.vb">
+      <DependentUpon>DocumentUploadedCriteria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="commonclasses\crypt.vb" />
+    <Compile Include="commonclasses\DocApproval.vb" />
+    <Compile Include="commonclasses\DocBackup.vb" />
+    <Compile Include="commonclasses\DocEmail.vb" />
+    <Compile Include="commonclasses\DocGroup.vb" />
+    <Compile Include="commonclasses\DocGroupAccess.vb" />
+    <Compile Include="commonclasses\DocIndex.vb" />
+    <Compile Include="commonclasses\DocLinks.vb" />
+    <Compile Include="commonclasses\DocList.vb" />
+    <Compile Include="commonclasses\DocNotes.vb" />
+    <Compile Include="commonclasses\DocRouting.vb" />
+    <Compile Include="commonclasses\DocTags.vb" />
+    <Compile Include="doctype.aspx.designer.vb">
+      <DependentUpon>doctype.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="doctype.aspx.vb">
+      <DependentUpon>doctype.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="commonclasses\DocTypeLogo.vb" />
+    <Compile Include="commonclasses\DocTypes.vb" />
+    <Compile Include="DocUser.vb" />
+    <Compile Include="DocViewer2.ashx.vb">
+      <DependentUpon>DocViewer2.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="FileUpload.Master.designer.vb">
+      <DependentUpon>FileUpload.Master</DependentUpon>
+    </Compile>
+    <Compile Include="FileUpload.Master.vb">
+      <DependentUpon>FileUpload.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forgot.aspx.designer.vb">
+      <DependentUpon>forgot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forgot.aspx.vb">
+      <DependentUpon>forgot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="home.aspx.designer.vb">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home.aspx.vb">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Import.aspx.designer.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Import.aspx.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.Master.designer.vb">
+      <DependentUpon>Login.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Login.Master.vb">
+      <DependentUpon>Login.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Pdf2Viewer.ashx.vb">
+      <DependentUpon>Pdf2Viewer.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="purge.aspx.designer.vb">
+      <DependentUpon>purge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="purge.aspx.vb">
+      <DependentUpon>purge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Search.aspx.designer.vb">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Search.aspx.vb">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucHr.ascx.designer.vb">
+      <DependentUpon>ucHr.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucHr.ascx.vb">
+      <DependentUpon>ucHr.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user.aspx.designer.vb">
+      <DependentUpon>user.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user.aspx.vb">
+      <DependentUpon>user.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlCheckBox.ascx.designer.vb">
+      <DependentUpon>UserControlCheckBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlCheckBox.ascx.vb">
+      <DependentUpon>UserControlCheckBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlDocNotes.ascx.designer.vb">
+      <DependentUpon>UserControlDocNotes.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlDocNotes.ascx.vb">
+      <DependentUpon>UserControlDocNotes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlDocRouting.ascx.designer.vb">
+      <DependentUpon>UserControlDocRouting.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlDocRouting.ascx.vb">
+      <DependentUpon>UserControlDocRouting.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlDocumentIndex.ascx.designer.vb">
+      <DependentUpon>UserControlDocumentIndex.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlDocumentIndex.ascx.vb">
+      <DependentUpon>UserControlDocumentIndex.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControlPager.ascx.designer.vb">
+      <DependentUpon>UserControlPager.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlPager.ascx.vb">
+      <DependentUpon>UserControlPager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view.aspx.designer.vb">
+      <DependentUpon>view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view.aspx.vb">
+      <DependentUpon>view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewDoc.aspx.designer.vb">
+      <DependentUpon>ViewDoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewDoc.aspx.vb">
+      <DependentUpon>ViewDoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DocReceivingReport.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentUploadedDetails.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentUploadedHourly.rdlc" />
+    <EmbeddedResource Include="DocumentChanges.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentUploaded.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentStatusSummary.rdlc" />
+    <EmbeddedResource Include="DocumentStatus.rdlc" />
+    <EmbeddedResource Include="DeletedDocuments.rdlc" />
+    <EmbeddedResource Include="DocumentRoutingHistory.rdlc" />
+    <EmbeddedResource Include="MonthlyReceivingReport.rdlc" />
+    <EmbeddedResource Include="PendingApprovalList.rdlc" />
+    <EmbeddedResource Include="ReleaseMonitoring.rdlc" />
+    <EmbeddedResource Include="rptGroupStatusSummary.rdlc" />
+    <EmbeddedResource Include="DocumentArchivedPerUserReport.rdlc" />
+    <EmbeddedResource Include="DocumentArchivedReport.rdlc" />
+    <EmbeddedResource Include="DashboardDocList.rdlc" />
+    <EmbeddedResource Include="DocumentList.rdlc" />
+    <EmbeddedResource Include="RecordsDispositionSchedule.rdlc" />
+    <EmbeddedResource Include="rptDocumentStatusSummary.rdlc" />
+    <EmbeddedResource Include="rptDocUploadedHourlyGraph.rdlc" />
+    <EmbeddedResource Include="rptDocUploadedMonthlyGraph.rdlc" />
+    <EmbeddedResource Include="DocumentListPerUser.rdlc" />
+    <EmbeddedResource Include="DocumentReceived.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentIndexStatus.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="GroupStatus.rdlc" />
+    <EmbeddedResource Include="report_docstatus.rdlc" />
+    <EmbeddedResource Include="report_overdue.rdlc" />
+    <EmbeddedResource Include="report_dochistory.rdlc" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentIndex.rdlc" />
+    <EmbeddedResource Include="report_uploadcount.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDocumentStatus.rdlc" />
+    <EmbeddedResource Include="rptReleaseAmount.rdlc" />
+    <EmbeddedResource Include="rptReleaseAmountInvalid.rdlc" />
+    <EmbeddedResource Include="rptUserDoc.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DocViewer2.ashx" />
+    <Content Include="FileUpload.Master" />
+    <Content Include="Login.Master" />
+    <None Include="daPendingApprovalList.xsc">
+      <DependentUpon>daPendingApprovalList.xsd</DependentUpon>
+    </None>
+    <None Include="daPendingApprovalList.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>daPendingApprovalList.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="daPendingApprovalList.xss">
+      <DependentUpon>daPendingApprovalList.xsd</DependentUpon>
+    </None>
+    <None Include="datadocumentuploaddetails.xsc">
+      <DependentUpon>datadocumentuploaddetails.xsd</DependentUpon>
+    </None>
+    <None Include="datadocumentuploaddetails.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>datadocumentuploaddetails.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="datadocumentuploaddetails.xss">
+      <DependentUpon>datadocumentuploaddetails.xsd</DependentUpon>
+    </None>
+    <Content Include="docuvu5DataSet.xsc">
+      <DependentUpon>docuvu5DataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="docuvu5DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>docuvu5DataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="docuvu5DataSet.xss">
+      <DependentUpon>docuvu5DataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="doDocumentArchived.xsc">
+      <DependentUpon>doDocumentArchived.xsd</DependentUpon>
+    </None>
+    <None Include="doDocumentArchived.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>doDocumentArchived.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="doDocumentArchived.xss">
+      <DependentUpon>doDocumentArchived.xsd</DependentUpon>
+    </None>
+    <None Include="dsDBL.xsc">
+      <DependentUpon>dsDBL.xsd</DependentUpon>
+    </None>
+    <None Include="dsDBL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDBL.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsDBL.xss">
+      <DependentUpon>dsDBL.xsd</DependentUpon>
+    </None>
+    <None Include="dsDocArchived.xsc">
+      <DependentUpon>dsDocArchived.xsd</DependentUpon>
+    </None>
+    <None Include="dsDocArchived.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDocArchived.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsDocArchived.xss">
+      <DependentUpon>dsDocArchived.xsd</DependentUpon>
+    </None>
+    <None Include="dsetRecordsDisposition.xsc">
+      <DependentUpon>dsetRecordsDisposition.xsd</DependentUpon>
+    </None>
+    <None Include="dsetRecordsDisposition.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsetRecordsDisposition.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsetRecordsDisposition.xss">
+      <DependentUpon>dsetRecordsDisposition.xsd</DependentUpon>
+    </None>
+    <None Include="dsoMatrixDocReceiving.xsc">
+      <DependentUpon>dsoMatrixDocReceiving.xsd</DependentUpon>
+    </None>
+    <None Include="dsoMatrixDocReceiving.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsoMatrixDocReceiving.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsoMatrixDocReceiving.xss">
+      <DependentUpon>dsoMatrixDocReceiving.xsd</DependentUpon>
+    </None>
+    <None Include="dspersonnel.xsc">
+      <DependentUpon>dspersonnel.xsd</DependentUpon>
+    </None>
+    <None Include="dspersonnel.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dspersonnel.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dspersonnel.xss">
+      <DependentUpon>dspersonnel.xsd</DependentUpon>
+    </None>
+    <None Include="dsPersonnelDocCount.xsc">
+      <DependentUpon>dsPersonnelDocCount.xsd</DependentUpon>
+    </None>
+    <None Include="dsPersonnelDocCount.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPersonnelDocCount.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsPersonnelDocCount.xss">
+      <DependentUpon>dsPersonnelDocCount.xsd</DependentUpon>
+    </None>
+    <Content Include="Monitoring.Master" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Pdf2Viewer.ashx" />
+    <Content Include="Site.Master" />
+    <Content Include="Report.Master" />
+    <Content Include="Pdf2Printer.ashx" />
+    <Content Include="user.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Pdf2Print.ashx" />
+    <None Include="rds_rpt_deliverontime.xsc">
+      <DependentUpon>rds_rpt_deliverontime.xsd</DependentUpon>
+    </None>
+    <None Include="rds_rpt_deliverontime.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>rds_rpt_deliverontime.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="rds_rpt_deliverontime.xss">
+      <DependentUpon>rds_rpt_deliverontime.xsd</DependentUpon>
+    </None>
+    <Content Include="ucDailyStorageConsumption.ascx" />
+    <Content Include="releasemonitoring.xsc">
+      <DependentUpon>releasemonitoring.xsd</DependentUpon>
+    </Content>
+    <None Include="releasemonitoring.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>releasemonitoring.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="releasemonitoring.xss">
+      <DependentUpon>releasemonitoring.xsd</DependentUpon>
+    </Content>
+    <None Include="rptDocUploadData.xsc">
+      <DependentUpon>rptDocUploadData.xsd</DependentUpon>
+    </None>
+    <None Include="rptDocUploadData.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>rptDocUploadData.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="rptDocUploadData.xss">
+      <DependentUpon>rptDocUploadData.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="dataconn\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>9188</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

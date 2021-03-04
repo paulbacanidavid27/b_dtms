@@ -1,0 +1,12 @@
+D:\DOTR-DTS\b_dtms\bin\dms.dll.config
+D:\DOTR-DTS\b_dtms\bin\dms.dll
+D:\DOTR-DTS\b_dtms\bin\dms.pdb
+D:\DOTR-DTS\b_dtms\bin\dms.xml
+D:\DOTR-DTS\b_dtms\obj\Debug\dms.vbprojAssemblyReference.cache
+D:\DOTR-DTS\b_dtms\obj\Debug\dms.Resources.resources
+D:\DOTR-DTS\b_dtms\obj\Debug\dms.vbproj.GenerateResource.cache
+D:\DOTR-DTS\b_dtms\obj\Debug\dms.vbproj.CoreCompileInputs.cache
+D:\DOTR-DTS\b_dtms\obj\Debug\dms.vbproj.CopyComplete
+D:\DOTR-DTS\b_dtms\obj\Debug\dms.dll
+D:\DOTR-DTS\b_dtms\obj\Debug\dms.xml
+D:\DOTR-DTS\b_dtms\obj\Debug\dms.pdb

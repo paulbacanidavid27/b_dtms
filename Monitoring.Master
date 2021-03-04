@@ -1,0 +1,747 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Monitoring.Master.vb" Inherits="dms.Monitoring" %>
+<%@ Register src="UserControlProfile.ascx" tagname="ucProfile" tagprefix="uc" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="cc1" %>
+<%@ Register src="userControlTab.ascx" tagname="userControlTab" tagprefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <meta name="mssmarttagspreventparsing" content="TRUE"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/docview.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/print.js" type="text/javascript"></script>
+    <script type="text/javascript" language="javascript" src="Scripts/jquery-1.8.3.min.js"></script>
+		    
+    <script type="text/javascript" language="javascript">
+        var msgHdl
+        function initMsg() {
+            if (document.getElementById("pMsgDiv"))
+                if (document.getElementById("pMsgDiv").style.visibility == "visible") 
+                msgHdl = setTimeout("hideMsg();", 5000)
+        }
+        function hideMsg() {
+            if (document.getElementById("pMsgDiv")) {
+                document.getElementById("pMsgDiv").style.visibility = "hidden";
+            }
+            clearTimeout(msgHdl)
+        }
+        function hlight(obj) {
+            obj.parentElement.style.backgroundColor = "#F0F0F0"
+        }
+        function uhlight(obj) {
+            obj.parentElement.style.backgroundColor = ""
+        }
+        function set_footer() {
+            var liHdr = 0
+            var liMnu = 0
+            var liMn = 0
+            var liHdrPage = 0
+            if (document.getElementById("hdr")) {
+                liHdr = document.getElementById("hdr").clientHeight
+            }
+            if (document.getElementById("mnu")) {
+                liMnu = document.getElementById("mnu").clientHeight
+            }
+
+            var liHeight = ufheight()
+            if (document.getElementById("pnlImageDisp")) {
+            
+                document.getElementById("pnlImageDisp").style.height = eval(document.getElementById("pnlImg").clientHeight - 50) + "px"
+                document.getElementById("pnlImageDisp").style.width = eval(document.getElementById("pnlImg").clientWidth - 50) + "px"
+            }
+            if (document.getElementById("docvw")) {
+                document.getElementById("docvw").style.height = eval(document.getElementById("pnlPDF").clientHeight - 50) + "px"
+
+            }
+            
+            if (document.getElementById("pAddDoc")) {
+                
+                document.getElementById("autoflow").style.height = eval(document.getElementById("pAddDoc").clientHeight - 100) + "px"
+
+            }
+
+                  
+
+        }
+        function maxscreen() {
+            if (document.getElementById("pnlPDF")) {
+                
+                document.getElementById("pnlPDF").style.height = "98%"
+                document.getElementById("pnlPDF").style.width = "98%"
+                document.getElementById("pnlPDFtbl").style.height = "100%"
+                document.getElementById("pnlPDFtbl").style.width = "100%"
+                //document.getElementById("docvw").style.height = "100%"
+                //document.getElementById("docvw").style.width = "100%"
+                document.getElementById("pnlPDFtbl").style.position = "absolute"
+                document.getElementById("pnlPDFtbl").style.left = "0px"
+                document.getElementById("pnlPDFtbl").style.top = "0px"
+                resize();
+                document.getElementById("maxw").style.display = "none"
+                document.getElementById("minw").style.display = ""
+            }
+        }
+
+        function resize() {
+            var liHeight = ufheight()
+            if (document.getElementById("pnlImageDisp")) {
+                document.getElementById("pnlImageDisp").style.height = eval(document.getElementById("pnlImg").clientHeight - 50) + "px"
+                document.getElementById("pnlImageDisp").style.width = "98%"
+            }
+            if (document.getElementById("docvw")) {
+                document.getElementById("docvw").style.height = eval(document.getElementById("pnlPDF").clientHeight - 50) + "px"
+                document.getElementById("docvw").style.width = "98%"
+            }
+        }
+
+        function minscreen() {
+            if (document.getElementById("pnlPDF")) {
+                document.getElementById("pnlPDF").style.height = "90%"
+                document.getElementById("pnlPDF").style.width = "90%"
+                document.getElementById("pnlPDFtbl").style.height = "100%"
+                document.getElementById("pnlPDFtbl").style.width = "100%"
+                //document.getElementById("pnlPDFtbl").style.height = "100%"
+                //document.getElementById("pnlPDFtbl").style.width = "100%"
+                document.getElementById("pnlPDFtbl").style.position = "relative"
+                
+
+                resize();
+                document.getElementById("maxw").style.display = ""
+                document.getElementById("minw").style.display = "none"
+            }
+        }
+
+        function set_footer_orig() {
+
+            var liHdr = 0
+            var liMnu = 0
+            var liMn = 0
+            var liHdrPage = 0
+            if (document.getElementById("hdr")) {
+                liHdr = document.getElementById("hdr").clientHeight
+            }
+            if (document.getElementById("mnu")) {
+                liMnu = document.getElementById("mnu").clientHeight
+            }
+            
+            
+            
+//            if (document.getElementById("pgt")) {
+//                liHdrPage = document.getElementById("pgt").clientHeight
+//            }
+            
+            var liHeight = ufheight()
+            if (document.getElementById("pnlImageDisp")) {
+                document.getElementById("pnlImageDisp").style.height = eval(document.getElementById("pnlImg").clientHeight - 50) + "px"
+            }
+            if (document.getElementById("docvw")) {
+                document.getElementById("docvw").style.height = eval(document.getElementById("pnlPDF").clientHeight - 50) + "px"
+            }
+
+            
+
+            
+
+            if (liHeight < 500) {
+                liHeight = 500
+                if (document.getElementById("pga")) {
+                    document.getElementById("pga").style.height = "500px"
+                }
+                if (document.getElementById("docaccess")) {
+                    document.getElementById("docaccess").style.height = eval(liHeight - liHdr - liMnu - liHdrPage - 200) + "px"
+                }
+
+            } else {
+                if (document.getElementById("pga")) {
+
+                    // document.getElementById("tblhd").style.top = eval(liHdr + liMnu + liHdrPage) + "px"
+                    
+                    document.getElementById("pga").style.height = eval(liHeight - liHdr - liMnu - liHdrPage - 11) + "px"
+                    // document.getElementById("tblft").style.top = eval(liHeight-13) + "px"
+                    if (document.getElementById("docaccess")) {
+                        document.getElementById("docaccess").style.height = eval(liHeight - liHdr - liMnu - liHdrPage - 200) + "px"
+                    }
+
+                }
+            }
+
+
+        }
+        function ufheight() {
+
+            var h = 0;
+
+            if (!window.innerHeight) { //IE
+                if (!(document.documentElement.clientWidth == 0)) { //strict mode
+
+                    h = document.documentElement.clientHeight;
+                  
+                
+                } else { //quirks mode
+
+                    h = document.body.clientHeight;
+                
+
+                }
+            } else { //w3c
+
+                h = window.innerHeight;
+                //h= document.body.clientHeight;
+                
+            }
+            return h
+        }
+        function ufSetHeight(aiHeight) {
+
+            if (!window.innerWidth) { //IE
+                if (!(document.documentElement.clientWidth == 0)) { //strict mode
+
+                    document.documentElement.clientHeight = aiHeight;
+                } else { //quirks mode
+
+                    document.body.clientHeight = aiHeight;
+                }
+            } else { //w3c
+
+                window.innerHeight = aiHeight;
+            }
+
+        }
+        function ufwidth() {
+            var w = 0;
+
+
+            if (!window.innerWidth) { //IE
+                if (!(document.documentElement.clientWidth == 0)) { //strict mode
+                    w = document.documentElement.clientWidth;
+
+                } else { //quirks mode
+                    w = document.body.clientWidth;
+
+                }
+            } else { //w3c
+                w = window.innerWidth;
+
+            }
+            return w
+        }
+        function showLogin(sL) {
+            if (sL == 1) {
+                if (document.getElementById("pLog"))
+                    document.getElementById("pLog").style.display = 'block';
+
+            } else {
+                if (document.getElementById("pLog"))
+                document.getElementById("pLog").style.display = 'none';
+            }
+        }
+        function showMenu(sL, id) {
+
+            if (sL == 1) {
+                
+                if (document.getElementById(id))
+                    document.getElementById(id).style.display = 'block';
+
+            } else {
+                
+                if (document.getElementById(id))
+                    document.getElementById(id).style.display = 'none';
+            }
+
+        }
+
+        function showMenu2(id) {
+
+            
+
+                if (document.getElementById(id)) {
+                    if (document.getElementById(id).style.display == 'block')
+                        document.getElementById(id).style.display = 'none' 
+                     else
+                         document.getElementById(id).style.display = 'block' 
+            }
+
+        }        
+        function tclear(obj, tval) {
+
+            if (obj.value == tval) {
+                obj.value = '';
+                obj.style.color = '#222222';
+            }
+
+            obj.style.color = '#222222';
+        }
+
+        function tblur(obj,tval) {
+
+            if (obj.value == '') {
+                obj.value = tval;
+                obj.style.color = '#C0C0C0';
+            }
+        }
+
+        function ufOverOut(obj,decor,clor,pclor) {
+            obj.style.textDecoration = decor;
+            obj.style.color = clor;
+            obj.parentElement.style.backgroundColor = pclor
+
+        }
+
+        var ut_timer = new common_timer_class();
+
+        function common_timer_class() {
+
+        }
+
+        common_timer_class.prototype.start = function () {
+            var mpe_timer_warning;
+            var lo_timer_message;
+            var lo_time_left_register;
+
+            var ls_minutes, ls_seconds;
+            var li_seconds_left;
+            var li_minutes, li_seconds;
+
+
+            //mpe_timer_warning = $find(gs_constant_session_time_behavior_id);
+            //lo_timer_message = $get(gs_constant_session_time_label_id);
+            //lo_time_left_register = $get(gs_constant_session_time);
+
+            lo_time_left_register = document.getElementById("lo_time_left_register")
+            li_seconds_left = document.getElementById("lo_time_left_register").value;
+            
+            if (li_seconds_left > 0) {
+                li_seconds_left = li_seconds_left - 1;
+
+                li_minutes = Math.floor(li_seconds_left / 60);
+                li_seconds = (li_seconds_left % 60);
+
+                ls_minutes = ('00' + li_minutes);
+                ls_minutes = ls_minutes.substring(ls_minutes.length - 2, ls_minutes.length);
+                ls_seconds = ('00' + li_seconds);
+                ls_seconds = ls_seconds.substring(ls_seconds.length - 2, ls_seconds.length);
+
+                //window.status = 'Session active for ' + ls_minutes + ':' + ls_seconds;
+                timeoutime.innerHTML = 'Session will timeout in ' + ls_minutes + ':' + ls_seconds +' minute(s)';
+
+                lo_time_left_register.value = li_seconds_left;
+
+//                if (li_seconds_left == 60) {
+//                        document.getElementById("DivTimeout1").style.display="block"
+//                        document.getElementById("DivTimeout2").style.display="block"
+//                    
+//                }
+
+//                if (li_seconds_left < 60) {
+//                    document.getElementById("DivTimeout1").style.display="block"
+//                        document.getElementById("DivTimeout2").style.display="block"
+//                }
+
+                setTimeout("ut_timer.start();", 1000);
+
+            } else {
+                document.getElementById("DivTimeout1").style.display = "block"
+                document.getElementById("DivTimeout2").style.display = "block"
+
+                //window.status = 'Session timed out.';
+                timeoutime.innerHTML = 'Your session has timeout. ';
+            }
+
+            return true;
+        }
+
+        var ut_timeleft = new common_timeleft_class();
+
+        function common_timeleft_class() {
+
+        }
+
+        common_timeleft_class.prototype.start = function () {
+            var mpe_timer_warning;
+            var lo_timer_message;
+            var vtlusd;
+
+            var v_minutes, v_seconds, v_hours;
+            var v_seconds_left;
+            var s_minutes, s_seconds, s_hours;
+
+
+
+
+            vtlusd = document.getElementById("tlusd")
+            if (vtlusd.value != "") {
+                v_seconds_left = vtlusd.value;
+
+                if (v_seconds_left > 0) {
+                    v_seconds_left = v_seconds_left - 1;
+
+                    v_minutes = Math.floor(v_seconds_left / 60);
+                    v_hours = Math.floor(v_minutes / 60);
+                    v_seconds = (v_seconds_left % 60);
+
+                    s_hours = ('00' + v_hours);
+                    s_hours = s_hours.substring(s_hours.length - 2, s_hours.length);
+                    s_minutes = ('00' + v_minutes);
+                    s_minutes = s_minutes.substring(s_minutes.length - 2, s_minutes.length);
+                    s_seconds = ('00' + v_seconds);
+                    s_seconds = s_seconds.substring(s_seconds.length - 2, s_seconds.length);
+                    document.getElementById("pnltimer").style.display = "";
+                    document.getElementById("hrleft").innerHTML = s_hours;
+                    document.getElementById("mnleft").innerHTML = s_minutes;
+                    document.getElementById("scleft").innerHTML = s_seconds;
+                    vtlusd.value = v_seconds_left;
+
+
+
+                    setTimeout("ut_timeleft.start();", 1000);
+
+                } else {
+                
+                    location.assign("maintenance.aspx");
+                }
+            }
+            return true;
+        }
+
+        function ufHL(obj, mImg, pImg, sImg) {
+            obj.parentElement.style.backgroundImage = 'url(\'images/tabs/' + mImg + '\')';
+            //obj.parentElement.previousSibling.previousSibling.style.backgroundImage = 'url(\'images/tabs/' + pImg + '\')';
+            //obj.parentElement.nextSibling.nextSibling.style.backgroundImage = 'url(\'images/tabs/' + sImg + '\')';
+            var element2 = obj.parentElement.previousSibling;
+            
+            if (element2.nodeType != 1) {
+                obj.parentElement.previousSibling.previousSibling.style.backgroundImage = 'url(\'images/tabs/' + pImg + '\')';
+            } else {
+                obj.parentElement.previousSibling.style.backgroundImage = 'url(\'images/tabs/' + pImg + '\')';
+            }
+
+            var element1 = obj.parentElement.nextSibling;
+            if (element1.nodeType != 1) {
+                obj.parentElement.nextSibling.nextSibling.style.backgroundImage = 'url(\'images/tabs/' + sImg + '\')';
+            } else {
+                obj.parentElement.nextSibling.style.backgroundImage = 'url(\'images/tabs/' + sImg + '\')';
+            }
+
+        }
+
+        function ufShowIP(obj) {
+
+            
+            var element2 = obj.parentElement.parentElement.parentElement.parentElement.parentElement.previousSibling;
+            $(element2).find("#imgUpd").attr("src", "images/loading.gif");
+            //alert("yes")
+//            if (element2.nodeType != 1) {
+//                obj.parentElement.previousSibling.previousSibling.style.backgroundImage = 'url(\'images/tabs/' + pImg + '\')';
+//            } else {
+//                obj.parentElement.previousSibling.style.backgroundImage = 'url(\'images/tabs/' + pImg + '\')';
+//            }
+
+//            var element1 = obj.parentElement.nextSibling;
+//            if (element1.nodeType != 1) {
+//                obj.parentElement.nextSibling.nextSibling.style.backgroundImage = 'url(\'images/tabs/' + sImg + '\')';
+//            } else {
+//                obj.parentElement.nextSibling.style.backgroundImage = 'url(\'images/tabs/' + sImg + '\')';
+//            }
+
+        }
+
+        function ShowProgressInChild(obj, objid) {
+
+
+            //var element2 = obj.parentElement.previousSibling;
+            $(obj).find(objid).attr("src", "images/processing.gif");
+
+
+        }
+        
+        function ShowProgress(obj) {
+
+
+            
+            $(obj).attr("src", "images/processing.gif");
+
+
+        }
+
+        function ShowProgress(obj,objid) {
+
+
+            var element2 = obj.parentElement.previousSibling;
+            $(element2).find(objid).attr("src", "images/processing.gif");
+            
+
+        }
+
+        function ufHLR(obj) {
+            obj.parentElement.style.backgroundImage = '';
+            //obj.parentElement.previousSibling.style.backgroundImage = '';
+            //obj.parentElement.nextSibling.style.backgroundImage = '';
+            var element2 = obj.parentElement.previousSibling;
+
+            if (element2.nodeType != 1) {
+                obj.parentElement.previousSibling.previousSibling.style.backgroundImage = '';
+            } else {
+                obj.parentElement.previousSibling.style.backgroundImage = '';
+            }
+
+            var element1 = obj.parentElement.nextSibling;
+            if (element1.nodeType != 1) {
+                obj.parentElement.nextSibling.nextSibling.style.backgroundImage = '';
+            } else {
+                obj.parentElement.nextSibling.style.backgroundImage = '';
+            }
+        }
+
+        function setValue(asID,asValue) {
+            //alert(document.getElementById(asID))
+            //alert(document.getElementById(asID).value)
+            document.getElementById(asID).value = asValue;
+            
+        }
+
+        function showWindow(asWindow) {        
+          
+            document.getElementById(asWindow).style.visibility = "visible";
+            document.getElementById(asWindow+"2").style.visibility = "visible";
+        }
+        function hideWindow(asWindow) {
+            document.getElementById(asWindow).style.visibility = "hidden";
+            document.getElementById(asWindow+"2").style.visibility = "hidden";
+        }
+
+    </script>
+    
+</head>
+<body oncontextmenu="return false;" onload="set_footer();ut_timer.start();ut_timeleft.start()" onresize="set_footer()" onclick="showLogin(0);showMenu(0,'adminmenu');showMenu(0,'reportmenu');initMsg();" >
+<form id="frm" runat="server" autocomplete="off" enctype="multipart/form-data">
+<input id="lo_time_left_register" runat="server" clientidmode="Static" type="hidden" value="120"/>
+<input id="tlusd" runat="server" clientidmode="Static" type="hidden" value=""/>
+<input id="scrMaxHt" runat="server" clientidmode="Static" type="hidden" value="120"/>
+<input id="scrMaxWidth" runat="server" clientidmode="Static" type="hidden" value="120"/>
+<asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="false" > 
+<%--<Scripts>
+<asp:scriptreference path="pagemet.js">
+</asp:scriptreference>
+</Scripts>--%>
+</asp:ScriptManager>
+<asp:UpdateProgress runat="server" ID="updPrg">
+    <ProgressTemplate>
+    <div class="progbar" style="position:fixed;left:0px;top:0px;width:100%;height:100%;text-align:center; vertical-align:middle;">
+        <table height="100%" width="100%" border="0"><tr><td valign="middle" align="center">
+        <p>&nbsp;<asp:Image ID="Image2" runat="server" src="images/loading.gif"/></p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;Loading ...</p>
+        </td>
+        </tr>
+        </table>
+    </div>
+    </ProgressTemplate>
+</asp:UpdateProgress>
+
+
+    <table id="matt" runat="server" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;width:100%;margin-top:0px;">
+        <tr>
+        
+            <%--<td colspan="2" style="background-color:#456A85">--%>
+            <td>
+            <table cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;width:100%;margin-top:0px;">
+                    <tr>
+                        <td>                         
+                           <span style="margin-left:20px;color:navy; font-size:12pt;font-weight:bold;font-family: Arial"><asp:ContentPlaceHolder ID="PageTitle" runat="server"/></span>
+                        </td>                                                
+                        <td align="right" valign="top" style="padding-right:5px;" >
+                                             
+                                <asp:Panel ID="pUser" runat="server" Visible="false" HorizontalAlign="Right" style="width:100%;">            
+                                
+                                        <table border="0" cellpadding="3" cellspacing="0" style="border-collapse:collapse" align="right">
+                                        <tr>
+                                        <td valign="middle" width="100px" align="left">
+                                        <asp:HyperLink ID="hlQuickGuide" runat="server" Visible="true" Target="_blank" style="" NavigateUrl="guide/DMS QUICK GUIDE.pdf">
+                                        <asp:Image ID="Image1" runat="server" tooltip="View Quick Guide" ImageUrl="images/question4.png"  height="16px" Width="18px"/>
+                                        </asp:HyperLink>
+                                        </td>
+                                        <td valign="middle">
+                                        <%--<div class="zoom_img" >--%>
+                                        <asp:ImageButton ID="imgHome" runat="server" tooltip="Home" ImageUrl="images/home.png" style="border:solid 1px #C0C0C0" height="15px" Width="15px"/>
+                                        <%--</div>--%>
+                                        </td> 
+                                        <td valign="middle">
+                                        <asp:HyperLink ID="hlHelp" runat="server" Visible="false" Target="_blank">
+                                        <asp:Image ID="imgHelp" runat="server" tooltip="View Help Page" ImageUrl="images/question.png" style="border:solid 1px #C0C0C0" height="15px" Width="15px"/>
+                                        </asp:HyperLink>
+                                        </td>   
+                                        <asp:updatepanel ID="pnlActivities" runat="server" UpdateMode="Conditional">
+                                        <ContentTemplate>
+                                            <td valign="middle"><asp:ImageButton ID="imgBookmark" runat="server" tooltip="View Bookmark" ImageUrl="images/bookmark_icon.png" style="border:solid 1px #C0C0C0" height="15px" Width="15px"/></td>   
+                                            <td valign="middle"><asp:ImageButton ID="imgActivities" runat="server" tooltip="View Activities" ImageUrl="images/bullets.png" style="border:solid 1px #C0C0C0" height="15px" Width="15px"/></td>   
+                                            
+                                        </ContentTemplate>
+                                        </asp:updatepanel>
+                                        
+                                        <td valign="middle">
+                                        <%--<div class="zoom_img" >--%>
+                                        <asp:ImageButton ID="imgProfile" runat="server" tooltip="View Profile" style="border:solid 1px #C0C0C0" height="15px" Width="15px"/>
+                                        <%--</div>--%>
+                                        </td>
+                                        <td valign="middle" style="text-transform:capitalize;font-family:Tahoma; font-size:9pt;color:#00001A">Welcome, <asp:Literal ID="lUserInfo" runat="server" Text=""></asp:Literal>!</td>
+                                        <td valign="middle"><asp:ImageButton ID="imgLogoff" runat="server" tooltip="Logout"  ImageUrl="images/logoff.png" /></td></tr>
+                                        <tr>
+                                            <td colspan="3" align="center"></td>
+                                        </tr>
+                                        </table>
+                                </asp:Panel>
+                                
+                                
+                                
+                                
+                                
+                                
+                           
+                        
+                        </td>                       
+                    </tr>                                       
+                </table>
+            
+            </td>
+        </tr>
+      
+        <tr>
+            <td align="left">
+            <asp:ContentPlaceHolder ID="MenuContent" runat="server"/>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" valign="top" style="padding:15px;" width="70%">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"/></td>        
+                    
+          
+            </tr>
+        <tr>
+            <td  style="background-color:#FFFFFF">
+            
+            <table align="left">
+                    <tr>
+                        <td valign="middle" align="left"></td>
+                    
+                        <td valign="middle" align="left" style="font-size:9pt;padding-left:10px;padding-top:10px;">Copyright © 2012. <asp:Label ID="lDateNow" runat="server" Text="Label" Visible="true"></asp:Label><br /><span title='Note: Session timeout timer resets every page refresh.' id="timeoutime"></span>
+                        
+                        </td>
+                    </tr>                  
+                    
+                </table>
+            </td>
+        </tr>
+    </table>
+     
+   
+    
+        
+   
+ <asp:ContentPlaceHolder ID="cntntUpload" runat="server"/>
+       
+    <div  visible="false" id="DivProfile1" runat="server" ></div>
+    <div  visible="false" id="DivProfile2" runat="server" >
+                <table cellspacing="0" cellpadding="0" style="width:100%;height:100%">
+                <tr>
+                  <td valign="middle" align="center">                
+                    <uc:UcProfile id="prf" runat="server"></uc:UcProfile>
+                  </td>
+                </tr>                
+                </table>
+            </div>
+
+            <div  style="display:none" id="DivTimeout1" class="box1"></div>
+            <div  style="display:none" id="DivTimeout2" class="box2">
+                <table cellspacing="0" cellpadding="0" style="width:100%;height:100%">
+                <tr>
+                  <td valign="middle" align="center">                
+                   
+                            
+                                <%--start--%>
+                                               <asp:Panel runat="server" ID="pnlTimeout" style="width:600px;border:solid 1px gray;background-color:White">
+                                               
+                                                <table border="0">                                                        
+                                                        <tr>
+                                                            <td align="left">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="center"><asp:Image ID="Image12" runat="server" ImageUrl="images/idle.png" style="vertical-align:middle" Height="58px" Width="66px"></asp:Image><h2>Session Expired!</h2></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="left">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="left">&nbsp;</td>
+                                                        </tr>
+                                                        
+                                                        <tr>
+                                                            <td align="center">You have been logout due to inactivity. Please login to continue.
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="style1">&nbsp;</td>
+                                                        </tr>       
+                                                        <tr>
+                                                            <td align="center"><input type="button"  class="btn"  value="Login" onclick="window.location.replace('default.aspx')" style="cursor: pointer"/><asp:Button ID="btLogin" runat="server" Visible="false" cssclass="btn" Text="Login" /></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="left">&nbsp;</td>
+                                                        </tr>
+                                                 </table>
+                                                 </asp:Panel> 
+                                                 <cc1:DropShadowExtender ID="dse" runat="server"
+    TargetControlID="pnlTimeout" 
+    Opacity=".5" 
+    Rounded="false"
+    TrackPosition="true" />
+                                <%--start--%>
+                            
+
+                  </td>
+                </tr>                
+                </table>
+            </div>
+    
+       <asp:UpdatePanel runat="server" ID="pnlView" UpdateMode="Conditional" Visible="True">
+        <ContentTemplate>
+       
+            <div  visible="false" id="cfBoxLayout" runat="server" ></div>
+            <div  visible="false" id="cfBoxLayout2" runat="server" >
+                <table cellspacing="0" cellpadding="0" style="width:100%;height:100%">
+                <tr>
+                  <td valign="middle" align="center">                
+                    <asp:ContentPlaceHolder ID="PopupMenu" runat="server"/>
+                  </td>
+                </tr>                
+                </table>
+            </div>
+            
+        
+        </ContentTemplate>
+        </asp:UpdatePanel>
+<asp:UpdatePanel runat="server" ID="pnlMessage" UpdateMode="Conditional" Visible="True">
+        <ContentTemplate>
+       <asp:Panel runat="server" Visible="false" ID="pMsgDiv" ClientIDMode="Static" style="background-color: #FFFFCC; left:15%;width:70%;position: fixed;top:0px;border-bottom:solid 1px #222222;border-left:solid 1px #222222;border-right:solid 1px #222222;border-radius:0px 0px 5px 5px ;box-shadow: 0px 2px 5px 1px #CCCCCC;visibility:visible;z-index:99999999">
+                <table border="0" cellspacing="0" cellpadding="0" style="width:100%;border-collapse:collapse;">
+                <tr>
+                  <td>&nbsp;</td>
+                  <td valign="middle" align="center" style="font-family:Verdana;font-size:9pt;">                
+                      <asp:Label ID="lmsgtxt" runat="server" Text="xxxxxxxxxxxxxxx"></asp:Label>
+                  </td>
+                  <td align="right" style="width:20px;height:23px;">
+                      <asp:ImageButton ID="imgCloseWindow" runat="server" imageurl="images/close_window.gif"/></td>
+                      <td>&nbsp;</td>
+                </tr>                
+                </table>
+       </asp:Panel> 
+        </ContentTemplate>
+        </asp:UpdatePanel>    
+    <div align="right" style="display:none;font-size:14pt;color:white;background-color: #FF0F0F; left:30%;width:40%;position: fixed;top:0px;border-bottom:solid 1px #222222;border-left:solid 1px #222222;border-right:solid 1px #222222;border-radius:0px 0px 5px 5px;box-shadow: 0px 2px 5px 1px #CCCCCC;visibility:visible;z-index:99999998" id="pnltimer">
+                           <marquee width="100%">
+                        <table cellpadding="0" cellspacing="0" style="border-collapse:collapse">
+                        <tr><td colspan="3" align="center">System Advisory!!! DMS will undergo system maintenance on <b><asp:Literal ID="lSM" runat="server"></asp:Literal></b>. Please refrain from using the system during this time. Time left until system shutdown - </td>
+                        <td align="right" id="hrleft" style="color:yellow;font-size:14pt;font-weight:bold;padding-left:10px;"></td><td align="left">h :</td><td align="right" style="color:#D5FFD5; font-size:14pt;font-weight:bold;padding-left:10px;" id="mnleft"></td><td align="left">m :</td><td align="right" style="color:#DFFFFF; font-size:14pt;font-weight:bold;padding-left:10px;" id="scleft"></td><td align="left">s</td></tr>
+                        </table></div>
+    </form>
+</body>
+</html>

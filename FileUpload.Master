@@ -1,0 +1,212 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="FileUpload.Master.vb" Inherits="dms.FileUpload" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript" language="javascript">
+        function set_footer() {
+
+            var liHdr = 0
+            var liMnu = 0
+            var liMn = 0
+            var liHdrPage = 0
+            if (document.getElementById("hdr")) {
+                liHdr = document.getElementById("hdr").clientHeight
+            }
+            if (document.getElementById("mnu")) {
+                liMnu = document.getElementById("mnu").clientHeight
+            }
+            if (document.getElementById("mn")) {
+                liMn = document.getElementById("mn").clientHeight
+            }
+            if (document.getElementById("hdrpage")) {
+                liHdrPage = document.getElementById("hdrpage").clientHeight
+            }
+
+            var liHeight = ufheight()
+
+            if (liHeight < 500) {
+                liHeight = 500
+
+                document.getElementById("pg").style.height = liHeight + "px"
+
+            } else if (window.innerWidth) { //IE
+
+                document.getElementById("pg").style.height = liHeight + "px"
+
+            }
+
+            if (document.getElementById("pg")) {
+
+                if (document.getElementById("mn")) {
+                    document.getElementById("mn").style.height = eval(liHeight - liMnu - liHdr - 11) + "px"
+                }
+
+
+                document.getElementById("pg").style.height = liHeight + "px"
+
+                if (document.getElementById("tblgrid")) {
+                    //alert(eval(liHeight - liMnu - liHdr - liHdrPage - 11) + "px")
+                    document.getElementById("tblgrid").style.height = eval(liHeight - liMnu - liHdr - liHdrPage - 11) + "px"
+                }
+
+            }
+        }
+        function ufheight() {
+
+            var h = 0;
+
+            if (!window.innerWidth) { //IE
+                if (!(document.documentElement.clientWidth == 0)) { //strict mode
+
+                    h = document.documentElement.clientHeight;
+
+                } else { //quirks mode
+
+                    h = document.body.clientHeight;
+
+                }
+            } else { //w3c
+
+                h = window.innerHeight;
+
+            }
+            return h
+        }
+        function ufSetHeight(aiHeight) {
+
+            if (!window.innerWidth) { //IE
+                if (!(document.documentElement.clientWidth == 0)) { //strict mode
+
+                    document.documentElement.clientHeight = aiHeight;
+                } else { //quirks mode
+
+                    document.body.clientHeight = aiHeight;
+                }
+            } else { //w3c
+
+                window.innerHeight = aiHeight;
+            }
+
+        }
+        function ufwidth() {
+            var w = 0;
+
+
+            if (!window.innerWidth) { //IE
+                if (!(document.documentElement.clientWidth == 0)) { //strict mode
+                    w = document.documentElement.clientWidth;
+
+                } else { //quirks mode
+                    w = document.body.clientWidth;
+
+                }
+            } else { //w3c
+                w = window.innerWidth;
+
+            }
+            return w
+        }
+    </script>
+</head>
+<body onload="set_footer()" onresize="set_footer()" style="background-image:url('images/bg.png'); background-repeat:no-repeat;">
+    <form id="frm" runat="server" enctype="multipart/form-data">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" /> 
+    <div class="page" id="pg">
+        <div class="header" id="hdr">
+                <table style="width:100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse">
+                    <tr>
+                        <td rowspan="2">
+                        <table><tr><td>
+                            <asp:Image ID="Image3" runat="server" height="70px" Width="70px" imageurl="images/dbm_logo.gif" /></td><td>
+                            <div class="title" >
+                             <h1>DOCUMENT MANAGEMENT SYSTEM</h1>
+                            </div >
+                            </td>
+                            </tr>
+                            </table>
+                        </td>
+                        <td align="right">                            
+                            <asp:UpdatePanel runat="server" ID="pnlLogin" UpdateMode="Conditional">
+                                <ContentTemplate>                                
+                                <asp:Panel ID="pUser" runat="server" Visible="false" HorizontalAlign="Right">            
+                                <table style="width:120px" border="0" cellspacing="0" cellpadding="0" align="right"> 
+                                    <tr>
+                                        <td style="width:100px;color:white;font-size:11px;font-family:Arial" nowrap>
+                                            <asp:Literal ID="lUserInfo" runat="server" Text="George Sotelo"></asp:Literal>
+                                        </td>
+                                        <td  style="width:20px">
+                                            <asp:ImageButton ID="imgUserInfo" ImageUrl="images/arrowdown.jpg" runat="server" style="height: 13px" />
+                                        </td>
+                                    </tr>                                    
+                                    <tr>
+                                        <td colspan="2" align="right">                                        
+                                            <asp:Panel ID="pLogin" runat="server" Visible="false" HorizontalAlign="Right">            
+                                            
+                                                <table border="0" style="width:122px;position: absolute;border:solid 1px black;background-color:white">
+                                                    <tr>
+                                                        <td align="left" style="border-bottom: solid 1px gray;height:24px">
+                                                            &nbsp;&nbsp;&nbsp;
+                                                            <asp:Image ID="Image1" runat="server"  imageurl="images/profile.jpg" />    
+                                                            <asp:LinkButton ID="lbProfile" runat="server">Profile</asp:LinkButton></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="left" style="height:24px">
+                                                        &nbsp;&nbsp;&nbsp;
+                                                            <asp:Image ID="Image2" runat="server" imageurl="images/logout.jpg"/>
+                                                            <asp:LinkButton ID="Logout" runat="server">Logout</asp:LinkButton></td>
+                                                    </tr>                                                    
+                                                </table>                                            
+                                            
+                                            </asp:Panel>            
+                                        </td>
+                                    </tr>
+                                    
+                                </table>
+                                </asp:Panel>
+                                </ContentTemplate>
+                        </asp:UpdatePanel>
+                        </td>
+                        
+                    </tr>
+                    
+                    <tr>
+                        <td align="center">
+                            <asp:Panel ID="pSearch" visible="false" runat="server">                            
+                            <table border="0" cellspacing="3" cellpadding="0" style="border: solid 1px #ccc;background-color:white">
+                                <tr>
+                                    <td nowrap>
+                                        <asp:TextBox width="300px" ID="tbTopSearch" runat="server" style="border: 0px"></asp:TextBox>
+                                    </td>
+                                    <td nowrap>
+                                        |
+                                    </td>
+                                    
+                                    <td  nowrap>
+                                        <asp:ImageButton ID="imgTopSearch" runat="server" imageurl = "images/mglass.jpg" />
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                            </asp:Panel>
+                        </td>
+                        
+                    </tr>
+                    
+                </table>
+       
+            </div>
+        <div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>        
+    </div>
+    
+        
+    
+    </form>
+</body>
+</html>
